@@ -22,14 +22,22 @@ h1 {
 	text-align: center;
 }
 
+#questionContainer {
+	display:inline-flex;
+}
+
 #containerQ {
 	border:1px solid black;
 	width:350px;
-	height:500px;
 	border-radius:10px;
-	margin:30px auto 0 auto;
+	margin:auto auto;
 	background-color:#FFFFFF;
 	padding:10px;
+}
+
+#question {
+	font-size:1.5em;
+	margin-bottom:1em;
 }
 
 #options div {
@@ -45,4 +53,8 @@ h1 {
 #options div:hover {
 	background-color:#7777FF;
 	color:#FFFFFF;
+}
+
+#options div:last-child {
+	margin-bottom:5px;
 }
