@@ -64,3 +64,8 @@ h1 {
 #options div:last-child {
 	margin-bottom:5px;
 }
+
+#userInput {
+	background-color:none;
+	border:none;
+}
