@@ -24,7 +24,7 @@ h1 {
 }
 
 #questionContainer {
-	display:inline-flex;
+	display:none;
 	width:100%;
 	height:100%;
 }
