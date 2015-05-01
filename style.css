@@ -1,3 +1,24 @@
+/* do not group these rules */
+*::-webkit-input-placeholder {
+    color: #EEEEEE;
+    font-family:"Exo", sans-serif;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: #EEEEEE;
+    font-family:"Exo", sans-serif;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: #EEEEEE;
+    font-family:"Exo", sans-serif;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #EEEEEE;
+    font-family:"Exo", sans-serif;
+}
+
 body {
 	margin:0;
 	background-color:#DDDDDD;
@@ -65,12 +86,8 @@ h1 {
 	margin-bottom:5px;
 }
 
-form {
-	display:inline-block;
-	margin:0;
-}
-
 #userInput {
-	background-color:#4444FF;
+	background-color:transparent;
 	border:none;
+	color:#EEEEEE;
 }
