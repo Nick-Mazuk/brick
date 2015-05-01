@@ -1,6 +1,6 @@
 body {
 	margin:0;
-	background-color:#EEEEEE;
+	background-color:#DDDDDD;
 	font-family:"Exo", sans-serif;
 }
 
@@ -26,4 +26,19 @@ body {
 	margin:30px auto 0 auto;
 	background-color:#FFFFFF;
 	padding:10px;
+}
+
+#options div {
+	border-radius:10px;
+	padding:20px;
+	background-color:#4444FF;
+	margin-bottom:20px;
+	color:#EEEEEE;
+	-webkit-transition: background-color 0.2s,color 0.2s; /* Safari */
+    transition: background-color 0.2s,color 0.2s;
+}
+
+#options div:hover {
+	background-color:#7777FF;
+	color:#FFFFFF;
 }
