@@ -65,7 +65,12 @@ h1 {
 	margin-bottom:5px;
 }
 
+form {
+	display:inline-block;
+	margin:0;
+}
+
 #userInput {
-	background-color:none;
+	background-color:#4444FF;
 	border:none;
 }
