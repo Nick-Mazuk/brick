@@ -29,11 +29,14 @@ h1 {
 	height:100%;
 }
 
+#questionContainer > div:nth-child(1) {
+	margin:auto;
+}
+
 #containerQ {
 	border:1px solid black;
 	width:350px;
 	border-radius:10px;
-	margin:auto;
 	background-color:#FFFFFF;
 	padding:10px;
 }
