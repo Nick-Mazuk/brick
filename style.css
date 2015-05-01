@@ -1,5 +1,6 @@
 body {
 	margin:0;
+	background-color:#EEEEEE;
 }
 
 #openingScreen {
@@ -14,4 +15,13 @@ body {
 	font-size:48px;
 	margin:auto auto;
 	text-align: center;
+}
+
+#containerQ {
+	border:1px solid black;
+	width:350px;
+	height:500px;
+	border-radius:10px;
+	margin:30px auto 0 auto;
+	background-color:#FFFFFF;
 }
