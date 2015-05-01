@@ -1,6 +1,7 @@
 var openingScreen;
 var questionContainer;
 window.addEventListener("DOMContentLoaded", function() {start();});
+var questions = [];
 
 function start() {
 	openingScreen = document.getElementById("openingScreen");
