@@ -44,6 +44,21 @@ h1 {
 	text-align: center;
 }
 
+#openingScreen div span {
+	display:block;
+	margin:0;
+	padding:0;
+}
+
+#openingScreen div img {
+	width:350px;
+	-webkit-filter: drop-shadow(1px 5px 3px #000000);
+}
+
+#clickStart {
+	font-size:0.5em;
+}
+
 #questionContainer {
 	display:none;
 	width:100%;
@@ -91,6 +106,7 @@ h1 {
 	border:none;
 	color:#EEEEEE;
 	width:275px;
+	font-size:1em;
 }
 
 #userInput:focus {
