@@ -39,6 +39,9 @@ function clickScreen() {
 }
 
 function nextQuestion(answer) {
+	if(questionNumber > questions.length - 1) {
+		return null;
+	}
 	if(answer == "a") {
 		answers.push(["A", optionA.innerHTML.substring(3)]);
 		personalityCount.push(0);
