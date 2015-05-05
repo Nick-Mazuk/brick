@@ -23,6 +23,8 @@ body {
 	margin:0;
 	background-color:#DDDDDD;
 	font-family:"Exo", sans-serif;
+	-webkit-transition: background-color 120s; /* Safari */
+    transition: background-color 120s;
 }
 
 h1 {
@@ -93,7 +95,7 @@ h1 {
 }
 
 #options div:hover {
-	background-color:#7777FF;
+	background-color:#0066FF;
 	color:#FFFFFF;
 }
 
@@ -113,4 +115,38 @@ h1 {
 	border:none;
 	border-bottom:1px solid #AAAAAA;
 	outline: none;
+}
+
+#progressBar {
+	height:10px;
+	border-radius: 5px;
+	width:100%;
+	background-color:#AAAAAA;
+	margin-top:12px;
+}
+
+#progress {
+	border-radius: 5px;
+	height:10px;
+	background-color: #DDDDDD;
+}
+
+#results {
+	display:none;
+	margin:0 auto;
+	width:500px;
+	background-color:#FFFFFF;
+	border-radius: 10px;
+	padding:10px;
+	border:1px solid #000000;
+}
+
+#results .question {
+	border-bottom:1px solid #000000;
+	margin-bottom:60px;
+}
+
+#results .question:last-child {
+	border-bottom:none;
+	margin:0;
 }
