@@ -23,8 +23,8 @@ body {
 	margin:0;
 	background-color:#DDDDDD;
 	font-family:"Exo", sans-serif;
-	-webkit-transition: background-color 120s; /* Safari */
-    transition: background-color 120s;
+	-webkit-transition: background-color 240s; /* Safari */
+    transition: background-color 240s;
 }
 
 h1 {
