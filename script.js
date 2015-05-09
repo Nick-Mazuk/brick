@@ -134,6 +134,16 @@ function findMode(array) {
 function finished() {
 	questionContainer.style.display = "none";
 	results.style.display = "block";
+	var identity = document.getElementById("identity");
+	if(findMode(personalityCount) == 0) {
+		identity.innerHTML += "You most closely relate to Stephen Deadalus";
+	} else if(findMode(personalityCount) == 1) {
+		identity.innerHTML += "You most closely relate to Gregor";
+	} else if(findMode(personalityCount) == 2) {
+		identity.innerHTML += "You most closely relate to Mersault";
+	} else if(findMode(personalityCount) == 3) {
+		identity.innerHTML += "You most closely relate to the perfect existentialist";
+	}
 	for(i = 0; i < answers.length; i++) {
 		showQuestion(answers[i]);
 	}

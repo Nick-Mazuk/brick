@@ -150,3 +150,7 @@ h1 {
 	border-bottom:none;
 	margin:0;
 }
+
+#identity {
+	text-align:center;
+}
