@@ -10,6 +10,7 @@ var userInput;
 var numQuestions = 4;
 var results;
 var questionIndex = 1;
+var finalStory = "";
 window.addEventListener("DOMContentLoaded", function() {start();});
 var questions = [
 	["If I were to give you a brick, what would you do?", "Throw it", "Grind it and make art", "Do nothing, it doesn't matter anyways"],
@@ -155,4 +156,9 @@ function showQuestion(array) {
 	output += questions[array[0]-1][0] + "</h3>";
 	output += "<p>" + array[1] + ". " + array[2] + "</p></div>";
 	results.innerHTML += output;
+}
+
+//chooses the next question based on current answer
+function nextQ(num) {
+
 }
