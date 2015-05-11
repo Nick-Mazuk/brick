@@ -39,6 +39,7 @@ function start() {
 
 function clickScreen() {
 	openingScreen.style.display = "none";
+	questionContainer.style.display = "block";
 	questionContainer.style.display = "inline-flex";
 	document.getElementById("progress").style.width = (questionNumber/numQuestions) * 100 + "%";
 }
@@ -154,4 +155,8 @@ function showQuestion(array) {
 	output += questions[array[0]-1][0] + "</h3>";
 	output += "<p>" + array[1] + ". " + array[2] + "</p></div>";
 	results.innerHTML += output;
+}
+
+function nextQuestion() {
+	
 }
