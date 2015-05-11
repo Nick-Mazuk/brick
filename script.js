@@ -156,7 +156,3 @@ function showQuestion(array) {
 	output += "<p>" + array[1] + ". " + array[2] + "</p></div>";
 	results.innerHTML += output;
 }
-
-function nextQuestion() {
-	
-}
