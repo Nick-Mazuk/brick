@@ -19,7 +19,7 @@ var user = {
 	kindArt: ""
 }
 var questions = [
-	["If I were to give you a brick, what would you do?", "Throw it", "Grind it and make art", "Do nothing, it doesn't matter anyways"],
+	["If I were to give you a brick, what would you do?", "Throw it", "Make art", "Do nothing, it doesn't matter anyways"],
 	["Who would you throw the brick at?", "Your teacher", "Your boss", "Anyone who's around, I don't care who"],
 	["What piece of art would you make with the brick?", "Some sort of poem", "Whatever makes money", "All art is the same"],
 	["If you won't do anything with the brick, what would you do anyways?", "Write a masterpiece", "Go to work, just like every other day", "Just stay where I am"],
@@ -28,7 +28,7 @@ var questions = [
 	["So you're sitting at work and decide to throw a brick at your boss. Your boss turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you're sitting on a sidewalk and decide to throw a brick at a stranger. The stranger turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you decide to throw a brick at %s when they aren't looking. They turn around and exclaim, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
-	["Num: 9", "A", "B", "C"],
+	["So you're inscribing a poem onto your brick when someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" What do you respond?", "\"Who cares about the American Dream\"", "\"The American Dream does not exist\"", "\"I never thought about that\""],
 	["Num: 10", "A", "B", "C"],
 	["Num: 11", "A", "B", "C"],
 	["Num: 12", "A", "B", "C"],
@@ -136,13 +136,13 @@ function printArray (array) {
 }
 
 function changeBackground (color) {
-	if(color == 0 && questionNumber > 1) {
+	if(color == 0 && questionNumber > 8) {
 		document.body.style.backgroundColor = "#FF3300";
-	} else if (color == 1 && questionNumber > 1) {
+	} else if (color == 1 && questionNumber > 8) {
 		document.body.style.backgroundColor = "#00CC00";
-	} else if (color == 2 && questionNumber > 1) {
+	} else if (color == 2 && questionNumber > 8) {
 		document.body.style.backgroundColor = "#0066FF";
-	} else if (color == 3 && questionNumber > 1) {
+	} else if (color == 3 && questionNumber > 8) {
 		if(personalityCount.indexOf(0)==personalityCount(1)&&personalityCount.indexOf(2)==-1)
 			document.body.style.backgroundColor = "#FFFF00";
 		else
