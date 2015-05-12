@@ -176,7 +176,7 @@ function finished() {
 	results.style.display = "block";
 	var identity = document.getElementById("identity");
 	if(findMode(personalityCount) == 0) {
-		identity.innerHTML += "You most closely relate to Stephen Deadalus";
+		identity.innerHTML += "<img src='Pictures/stephen.png' width='300px'><br>You most closely relate to Stephen Deadalus";
 	} else if(findMode(personalityCount) == 1) {
 		identity.innerHTML += "You most closely relate to Gregor";
 	} else if(findMode(personalityCount) == 2) {
