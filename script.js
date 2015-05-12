@@ -7,19 +7,51 @@ var optionB;
 var optionC;
 var optionD;
 var userInput;
-var numQuestions = 4;
+var numQuestions = 20;
 var results;
-var questionIndex = 1;
+var questionIndex = 0;
 var finalStory = "";
+var itemsToInsert = "";
 window.addEventListener("DOMContentLoaded", function() {start();});
+var user = {
+	brickAction: "",
+	throwAt: "",
+	kindArt: ""
+}
 var questions = [
 	["If I were to give you a brick, what would you do?", "Throw it", "Grind it and make art", "Do nothing, it doesn't matter anyways"],
-	["Who would you throw the brick at?", "Your teacher", "My boss", "Anyone who's around, I don't care who"],
+	["Who would you throw the brick at?", "Your teacher", "Your boss", "Anyone who's around, I don't care who"],
 	["What piece of art would you make with the brick?", "Some sort of poem", "Whatever makes money", "All art is the same"],
-	["If you won't do anything with the brick, what would you do anyways?", "Write a masterpiece", "Go to work, just like every other day", "Just stay where I am"]
+	["If you won't do anything with the brick, what would you do anyways?", "Write a masterpiece", "Go to work, just like every other day", "Just stay where I am"],
+	["Hello world, still need to complete this question", "A", "B", "C"],
+	["So you're sitting in class and decide to throw a brick at your teacher. Your teacher turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
+	["So you're sitting at work and decide to throw a brick at your boss. Your boss turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
+	["So you're sitting on a sidewalk and decide to throw a brick at a stranger. The stranger turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
+	["So you decide to throw a brick at %s when they aren't looking. They turn around and exclaim, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
+	["Num: 9", "A", "B", "C"],
+	["Num: 10", "A", "B", "C"],
+	["Num: 11", "A", "B", "C"],
+	["Num: 12", "A", "B", "C"],
+	["Num: 13", "A", "B", "C"],
+	["Num: 14", "A", "B", "C"],
+	["Num: 15", "A", "B", "C"],
+	["Num: 16", "A", "B", "C"],
+	["Num: 17", "A", "B", "C"],
+	["Num: 18", "A", "B", "C"],
+	["Num: 19", "A", "B", "C"],
+	["Num: 20", "A", "B", "C"],
+	["%s becomes enraged and throws the brick back. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
+	["%s  becomes enraged and throws the brick at the other person. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
+	["%s becomes enraged and throws the brick randomly. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
+	["%s becomes enraged and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
+	["Num: 25", "A", "B", "C"],
+	["Num: 26", "A", "B", "C"],
+	["Num: 27", "A", "B", "C"],
 ];
 var answers = [];
 var personalityCount = [];
+//To reference decisions later on
+
 
 function start() {
 	openingScreen = document.getElementById("openingScreen");
@@ -47,33 +79,36 @@ function clickScreen() {
 
 function nextQuestion(answer) {
 	if(answer == "a") {
-		answers.push([questionIndex, "A", optionA.innerHTML.substring(3)]);
+		answers.push([questionIndex, questionNumber, "A", optionA.innerHTML.substring(3),itemsToInsert]);
 		personalityCount.push(0);
 		changeBackground(findMode(personalityCount));
+		nextQ(1);
 	} else if(answer == "b") {
-		answers.push([questionIndex, "B", optionB.innerHTML.substring(3)]);
+		answers.push([questionIndex, questionNumber, "B", optionB.innerHTML.substring(3),itemsToInsert]);
 		personalityCount.push(1);
 		changeBackground(findMode(personalityCount));
+		nextQ(2);
 	} else if(answer == "c") {
-		answers.push([questionIndex, "C", optionC.innerHTML.substring(3)]);
+		answers.push([questionIndex, questionNumber, "C", optionC.innerHTML.substring(3),itemsToInsert]);
 		personalityCount.push(2);
 		changeBackground(findMode(personalityCount));
+		nextQ(3);
 	} else if(answer == "d") {
-		answers.push([questionIndex, "D", userInput.value]);
+		answers.push([questionIndex, questionNumber, "D", userInput.value,itemsToInsert]);
 		personalityCount.push(3);
 		changeBackground(findMode(personalityCount));
+		nextQ(4);
 	}
 	if (questionNumber >= numQuestions || questionNumber > questions.length - 1) {
 		finished();
 		return null;
 	}
-	renderQuestion(questionIndex);
+	renderQuestion(questionIndex, itemsToInsert);
 }
 
-function renderQuestion(number) {
+function renderQuestion(number, insertItems) {
 	questionNumber++;
-	questionIndex++;
-	prompt.innerHTML = questionNumber +  ". " + questions[number][0];
+	prompt.innerHTML = parse(questionNumber +  ". " + questions[number][0],insertItems);
 	optionA.innerHTML = "A. " + questions[number][1];
 	optionB.innerHTML = "B. " + questions[number][2];
 	optionC.innerHTML = "C. " + questions[number][3];
@@ -108,7 +143,10 @@ function changeBackground (color) {
 	} else if (color == 2 && questionNumber > 1) {
 		document.body.style.backgroundColor = "#0066FF";
 	} else if (color == 3 && questionNumber > 1) {
-		document.body.style.backgroundColor = "#FFFF00";
+		if(personalityCount.indexOf(0)==personalityCount(1)&&personalityCount.indexOf(2)==-1)
+			document.body.style.backgroundColor = "#FFFF00";
+		else
+			document.body.style.backgroundColor = "#FF00FF";
 	}
 }
 
@@ -144,7 +182,10 @@ function finished() {
 	} else if(findMode(personalityCount) == 2) {
 		identity.innerHTML += "You most closely relate to Mersault";
 	} else if(findMode(personalityCount) == 3) {
-		identity.innerHTML += "You most closely relate to the perfect existentialist";
+		if(personalityCount.indexOf(0)==personalityCount(1)&&personalityCount.indexOf(2)==-1)
+			identity.innerHTML += "You most closely relate to the perfect existentialist";
+		else
+			identity.innerHTML += "You are almost a perfect existentialist";
 	}
 	for(i = 0; i < answers.length; i++) {
 		showQuestion(answers[i]);
@@ -152,13 +193,276 @@ function finished() {
 }
 
 function showQuestion(array) {
-	var output = "<div class='question'><h3>" + (array[0]) + ". ";
-	output += questions[array[0]-1][0] + "</h3>";
-	output += "<p>" + array[1] + ". " + array[2] + "</p></div>";
+	var output = "<div class='question'><h3>" + (array[1]) + ". ";
+	output += parse(questions[array[0]][0],array[4]) + "</h3>";
+	output += "<p>" + array[2] + ". " + array[3] + "</p></div>";
 	results.innerHTML += output;
 }
 
 //chooses the next question based on current answer
 function nextQ(num) {
+	switch(questionIndex) {
+		case 0:
+			if(num == 1) {
+				user.brickAction = "throw";
+				itemsToInsert = "";
+				questionIndex = 1;
+			} else if(num == 2) {
+				user.brickAction = "make art from";
+				itemsToInsert = "";
+				questionIndex = 2;
+			} else if(num == 3) {
+				user.brickAction = "do nothing with";
+				itemsToInsert = "";
+				questionIndex = 3;
+			} else {
+				user.brickAction = userInput.value;
+				itemsToInsert = "";
+				questionIndex = 4;
+			}
+			break;
+		case 1:
+			if(num == 1) {
+				user.throwAt = "teacher";
+				itemsToInsert = "";
+				questionIndex = 5;
+			} else if(num == 2) {
+				user.throwAt = "boss";
+				itemsToInsert = "";
+				questionIndex = 6;
+			} else if(num == 3) {
+				user.throwAt = "anyone";
+				itemsToInsert = "";
+				questionIndex = 7;
+			} else {
+				user.throwAt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 8;
+			}
+			break;
+		case 2:
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 9;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 10;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 11;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 12;
+			}
+			break;
+		/*case 2: //not done
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 13;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 14;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 15;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 16;
+			}
+			break;
+		case 2: //not done
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 9;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 10;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 11;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 12;
+			}
+			break;*/
+		case 5: //not done
+			if(num == 1) {
+				itemsToInsert = "Your teacher";
+				questionIndex = 21;
+			} else if(num == 2) {
+				itemsToInsert = "Your teacher";
+				questionIndex = 22;
+			} else if(num == 3) {
+				itemsToInsert = "Your teacher";
+				questionIndex = 23;
+			} else {
+				itemsToInsert = "Your teacher";
+				questionIndex = 24;
+			}
+			break;
+		case 6: //not done
+			if(num == 1) {
+				itemsToInsert = "Your boss";
+				questionIndex = 21;
+			} else if(num == 2) {
+				itemsToInsert = "Your boss";
+				questionIndex = 22;
+			} else if(num == 3) {
+				itemsToInsert = "Your boss";
+				questionIndex = 23;
+			} else {
+				itemsToInsert = "Your boss";
+				questionIndex = 24;
+			}
+			break;
+		case 7:
+			if(num == 1) {
+				itemsToInsert = "The stranger";
+				questionIndex = 21;
+			} else if(num == 2) {
+				itemsToInsert = "The stranger";
+				questionIndex = 22;
+			} else if(num == 3) {
+				itemsToInsert = "The stranger";
+				questionIndex = 23;
+			} else {
+				itemsToInsert = "The stranger";
+				questionIndex = 24;
+			}
+			break;
+		case 8:
+			if(num == 1) {
+				itemsToInsert = user.throwAt;
+				questionIndex = 21;
+			} else if(num == 2) {
+				itemsToInsert = user.throwAt;
+				questionIndex = 22;
+			} else if(num == 3) {
+				itemsToInsert = user.throwAt;
+				questionIndex = 23;
+			} else {
+				itemsToInsert = user.throwAt;
+				questionIndex = 24;
+			}
+			break;
+		/*case 2:
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 9;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 10;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 11;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 12;
+			}
+			break;
+		case 2:
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 9;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 10;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 11;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 12;
+			}
+			break;
+		case 2:
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 9;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 10;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 11;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 12;
+			}
+			break;
+		case 2:
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 9;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 10;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 11;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 12;
+			}
+			break;
+		case 2:
+			if(num == 1) {
+				user.kindArt = "poem";
+				itemsToInsert = "";
+				questionIndex = 9;
+			} else if(num == 2) {
+				user.kindArt = "money-maker piece of art";
+				itemsToInsert = "";
+				questionIndex = 10;
+			} else if(num == 3) {
+				user.kindArt = "any kind of art";
+				itemsToInsert = "";
+				questionIndex = 11;
+			} else {
+				user.kindArt = userInput.value;
+				itemsToInsert = userInput.value;
+				questionIndex = 12;
+			}
+			break;*/
+		default:
+			finished();
+	}
+}
 
+//used to insert items into a string
+function parse(str) {
+    var args = [].slice.call(arguments, 1),
+        i = 0;
+
+    return str.replace(/%s/g, function() {
+        return args[i++];
+    });
 }
