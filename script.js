@@ -23,11 +23,11 @@ var questions = [
 	["Who would you throw the brick at?", "Your teacher", "Your boss", "Anyone who's around, I don't care who"],
 	["What piece of art would you make with the brick?", "Some sort of poem", "Whatever makes money", "All art is the same"],
 	["If you won't do anything with the brick, what would you do anyways?", "Write a masterpiece", "Go to work, just like every other day", "Just stay where I am"],
-	["Hello world, still need to complete this question", "A", "B", "C"],
-	["So you're sitting in class and decide to throw a brick at your teacher. Your teacher turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
-	["So you're sitting at work and decide to throw a brick at your boss. Your boss turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
-	["So you're sitting on a sidewalk and decide to throw a brick at a stranger. The stranger turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
-	["So you decide to throw a brick at %s when they aren't looking. They turn around and exclaim, \"Who did this&#8253;\" What do you?", "Display your arrogance and admit guilt", "Blame the person next to you", "Wait for someone else to do something"],
+	["Where do you intend to %s?", "Not here", "Where my family is", "It doesn't matter"],
+	["So you're sitting in class and decide to throw a brick at your teacher. Your teacher turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
+	["So you're sitting at work and decide to throw a brick at your boss. Your boss turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
+	["So you're sitting on a sidewalk and decide to throw a brick at a stranger. The stranger turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
+	["So you decide to throw a brick at %s when they aren't looking. They turn around and exclaim, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you're inscribing a poem onto your brick when someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" What do you respond?", "\"Who cares about the American Dream\"", "\"The American Dream does not exist\"", "\"I never thought about that\""],
 	["Num: 10", "A", "B", "C"],
 	["Num: 11", "A", "B", "C"],
@@ -40,10 +40,10 @@ var questions = [
 	["Num: 18", "A", "B", "C"],
 	["Num: 19", "A", "B", "C"],
 	["Num: 20", "A", "B", "C"],
-	["%s becomes enraged and throws the brick back. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
-	["%s  becomes enraged and throws the brick at the other person. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
-	["%s becomes enraged and throws the brick randomly. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
-	["%s becomes enraged and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the country", "Back home", "Anywhere but here"],
+	["%s becomes enraged and throws the brick back. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
+	["%s  becomes enraged and throws the brick at the other person. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
+	["%s becomes enraged and throws the brick randomly. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
+	["%s becomes enraged and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["Num: 25", "A", "B", "C"],
 	["Num: 26", "A", "B", "C"],
 	["Num: 27", "A", "B", "C"],
@@ -180,13 +180,14 @@ function finished() {
 	} else if(findMode(personalityCount) == 1) {
 		identity.innerHTML += "You most closely relate to Gregor";
 	} else if(findMode(personalityCount) == 2) {
-		identity.innerHTML += "You most closely relate to Mersault";
+		identity.innerHTML += "You most closely relate to Meursault";
 	} else if(findMode(personalityCount) == 3) {
 		if(personalityCount.indexOf(0)==personalityCount(1)&&personalityCount.indexOf(2)==-1)
 			identity.innerHTML += "You most closely relate to the perfect existentialist";
 		else
 			identity.innerHTML += "You are almost a perfect existentialist";
 	}
+	document.getElementById("story").innerHTML = finalStory;
 	for(i = 0; i < answers.length; i++) {
 		showQuestion(answers[i]);
 	}
@@ -216,8 +217,8 @@ function nextQ(num) {
 				itemsToInsert = "";
 				questionIndex = 3;
 			} else {
-				user.brickAction = userInput.value;
-				itemsToInsert = "";
+				user.brickAction = userInput.value.toLowerCase();
+				itemsToInsert = userInput.value.toLowerCase();
 				questionIndex = 4;
 			}
 			break;
@@ -226,18 +227,22 @@ function nextQ(num) {
 				user.throwAt = "teacher";
 				itemsToInsert = "";
 				questionIndex = 5;
+				finalStory += "After given a brick by a random stranger, you decide to bring it to school to throw at your teacher. ";
 			} else if(num == 2) {
 				user.throwAt = "boss";
 				itemsToInsert = "";
 				questionIndex = 6;
+				finalStory += "After given a brick by a random stranger, you decide to bring it to work to throw at your boss. ";
 			} else if(num == 3) {
 				user.throwAt = "anyone";
 				itemsToInsert = "";
 				questionIndex = 7;
+				finalStory += "After given a brick by a random stranger, you decide to throw it at a random person. ";
 			} else {
 				user.throwAt = userInput.value;
 				itemsToInsert = userInput.value;
 				questionIndex = 8;
+				finalStory += "After given a brick by a random stranger, you decide to throw at " + userInput.value + ". ";
 			}
 			break;
 		case 2:
@@ -245,18 +250,22 @@ function nextQ(num) {
 				user.kindArt = "poem";
 				itemsToInsert = "";
 				questionIndex = 9;
+				finalStory += "After given a brick by a random stranger, you decide to inscribe a poem into it. "
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
 				itemsToInsert = "";
 				questionIndex = 10;
+				finalStory += "After given a brick by a random stranger, you decide to transform it into a piece of artwork that you can sell for money. ";
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
 				itemsToInsert = "";
 				questionIndex = 11;
+				finalStory += "After given a brick by a random stranger, you decide to make a piece of art. What kind of art doesn't matter. "
 			} else {
 				user.kindArt = userInput.value;
 				itemsToInsert = userInput.value;
 				questionIndex = 12;
+				finalStory += "After given a brick by a random stranger, you decide to make a " + userInput.value + ". ";
 			}
 			break;
 		/*case 2: //not done
@@ -300,61 +309,93 @@ function nextQ(num) {
 		case 5: //not done
 			if(num == 1) {
 				itemsToInsert = "Your teacher";
+				user.throwAction = "admit";
 				questionIndex = 21;
+				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
 				itemsToInsert = "Your teacher";
+				user.throwAction = "blame";
 				questionIndex = 22;
+				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
 				itemsToInsert = "Your teacher";
+				user.throwAction = "wait"
 				questionIndex = 23;
+				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
 				itemsToInsert = "Your teacher";
+				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
+				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
 			}
 			break;
 		case 6: //not done
 			if(num == 1) {
 				itemsToInsert = "Your boss";
+				user.throwAction = "admit";
 				questionIndex = 21;
+				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
 				itemsToInsert = "Your boss";
+				user.throwAction = "blame";
 				questionIndex = 22;
+				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
 				itemsToInsert = "Your boss";
+				user.throwAction = "wait"
 				questionIndex = 23;
+				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
 				itemsToInsert = "Your boss";
+				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
+				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
 			}
 			break;
 		case 7:
 			if(num == 1) {
 				itemsToInsert = "The stranger";
+				user.throwAction = "admit";
 				questionIndex = 21;
+				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
 				itemsToInsert = "The stranger";
+				user.throwAction = "blame";
 				questionIndex = 22;
+				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
 				itemsToInsert = "The stranger";
+				user.throwAction = "wait"
 				questionIndex = 23;
+				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
 				itemsToInsert = "The stranger";
+				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
+				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
 			}
 			break;
 		case 8:
 			if(num == 1) {
 				itemsToInsert = user.throwAt;
+				user.throwAction = "admit";
 				questionIndex = 21;
+				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
 				itemsToInsert = user.throwAt;
+				user.throwAction = "blame";
 				questionIndex = 22;
+				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
 				itemsToInsert = user.throwAt;
+				user.throwAction = "wait"
 				questionIndex = 23;
+				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
 				itemsToInsert = user.throwAt;
+				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
+				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
 			}
 			break;
 		/*case 2:
