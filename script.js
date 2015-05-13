@@ -136,14 +136,14 @@ function printArray (array) {
 }
 
 function changeBackground (color) {
-	if(color == 0 && questionNumber > 8) {
+	if(color == 0 && questionNumber > 1) {
 		document.body.style.backgroundColor = "#FF3300";
-	} else if (color == 1 && questionNumber > 8) {
+	} else if (color == 1 && questionNumber > 1) {
 		document.body.style.backgroundColor = "#00CC00";
-	} else if (color == 2 && questionNumber > 8) {
+	} else if (color == 2 && questionNumber > 1) {
 		document.body.style.backgroundColor = "#0066FF";
-	} else if (color == 3 && questionNumber > 8) {
-		if(personalityCount.indexOf(0)==personalityCount(1)&&personalityCount.indexOf(2)==-1)
+	} else if (color == 3 && questionNumber > 1) {
+		if(personalityCount.indexOf(0)==personalityCount.indexOf(1)&&personalityCount.indexOf(2)==-1)
 			document.body.style.backgroundColor = "#FFFF00";
 		else
 			document.body.style.backgroundColor = "#FF00FF";
@@ -182,8 +182,8 @@ function finished() {
 	} else if(findMode(personalityCount) == 2) {
 		identity.innerHTML += "You most closely relate to Meursault";
 	} else if(findMode(personalityCount) == 3) {
-		if(personalityCount.indexOf(0)==personalityCount(1)&&personalityCount.indexOf(2)==-1)
-			identity.innerHTML += "You most closely relate to the perfect existentialist";
+		if(personalityCount.indexOf(0)==personalityCount.indexOf(1)&&personalityCount.indexOf(2)==-1)
+			identity.innerHTML += "<img src='Pictures/perfect existentialist.png' width='100%'><br>You most closely relate to the perfect existentialist";
 		else
 			identity.innerHTML += "You are almost a perfect existentialist";
 	}
