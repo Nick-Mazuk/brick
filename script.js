@@ -11,7 +11,7 @@ var numQuestions = 20;
 var results;
 var questionIndex = 0;
 var finalStory = "";
-var itemsToInsert = "";
+var itemsToInsert = [];
 window.addEventListener("DOMContentLoaded", function() {start();});
 var user = {
 	brickAction: "",
@@ -29,9 +29,9 @@ var questions = [
 	["So you're sitting on a sidewalk and decide to throw a brick at a stranger. The stranger turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you decide to throw a brick at %s when they aren't looking. They turn around and exclaim, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you're inscribing a poem onto your brick when someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" What do you respond?", "\"Who cares about the American Dream\"", "\"The American Dream does not exist\"", "\"I never thought about that\""],
-	["Num: 10", "A", "B", "C"],
-	["Num: 11", "A", "B", "C"],
-	["Num: 12", "A", "B", "C"],
+	["So you're trying to sell your artwork, and a potential buyer insults your work saying, \"No one will ever buy that!\" What do you do?", "Punch them in the face", "Persevere until someone buys it", "Nothing, his opinion doesn't matter"],
+	["So you're talking about the play you just watched in the lobby, and the lead actor overhears your comment about art. They walk towards you to confront you. What do you do?", "Take pride in your beliefs and decide to argue", "\"Remember\" that you have work to finish", "Just stand still"],
+	["While you are making %s, Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making %s?\" What do you respond?", "I want to express my emotions", "To settle a deal with another person", "I don't know"],
 	["Num: 13", "A", "B", "C"],
 	["Num: 14", "A", "B", "C"],
 	["Num: 15", "A", "B", "C"],
@@ -43,7 +43,7 @@ var questions = [
 	["%s becomes enraged and throws the brick back. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s  becomes enraged and throws the brick at the other person. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s becomes enraged and throws the brick randomly. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
-	["%s becomes enraged and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
+	["%s becomes enraged that you %s and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["Num: 25", "A", "B", "C"],
 	["Num: 26", "A", "B", "C"],
 	["Num: 27", "A", "B", "C"],
@@ -108,7 +108,7 @@ function nextQuestion(answer) {
 
 function renderQuestion(number, insertItems) {
 	questionNumber++;
-	prompt.innerHTML = parse(questionNumber +  ". " + questions[number][0],insertItems);
+	prompt.innerHTML = parse2(questionNumber +  ". " + questions[number][0],insertItems);
 	optionA.innerHTML = "A. " + questions[number][1];
 	optionB.innerHTML = "B. " + questions[number][2];
 	optionC.innerHTML = "C. " + questions[number][3];
@@ -136,13 +136,13 @@ function printArray (array) {
 }
 
 function changeBackground (color) {
-	if(color == 0 && questionNumber > 1) {
+	if(color == 0 && questionNumber > 8) {
 		document.body.style.backgroundColor = "#FF3300";
-	} else if (color == 1 && questionNumber > 1) {
+	} else if (color == 1 && questionNumber > 8) {
 		document.body.style.backgroundColor = "#00CC00";
-	} else if (color == 2 && questionNumber > 1) {
+	} else if (color == 2 && questionNumber > 8) {
 		document.body.style.backgroundColor = "#0066FF";
-	} else if (color == 3 && questionNumber > 1) {
+	} else if (color == 3 && questionNumber > 8) {
 		if(personalityCount.indexOf(0)==personalityCount.indexOf(1)&&personalityCount.indexOf(2)==-1)
 			document.body.style.backgroundColor = "#FFFF00";
 		else
@@ -206,41 +206,41 @@ function nextQ(num) {
 		case 0:
 			if(num == 1) {
 				user.brickAction = "throw";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 1;
 			} else if(num == 2) {
 				user.brickAction = "make art from";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 2;
 			} else if(num == 3) {
 				user.brickAction = "do nothing with";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 3;
 			} else {
 				user.brickAction = userInput.value.toLowerCase();
-				itemsToInsert = userInput.value.toLowerCase();
+				itemsToInsert = [userInput.value.toLowerCase()];
 				questionIndex = 4;
 			}
 			break;
 		case 1:
 			if(num == 1) {
 				user.throwAt = "teacher";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 5;
 				finalStory += "After given a brick by a random stranger, you decide to bring it to school to throw at your teacher. ";
 			} else if(num == 2) {
 				user.throwAt = "boss";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 6;
 				finalStory += "After given a brick by a random stranger, you decide to bring it to work to throw at your boss. ";
 			} else if(num == 3) {
 				user.throwAt = "anyone";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 7;
 				finalStory += "After given a brick by a random stranger, you decide to throw it at a random person. ";
 			} else {
 				user.throwAt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 8;
 				finalStory += "After given a brick by a random stranger, you decide to throw at " + userInput.value + ". ";
 			}
@@ -248,22 +248,22 @@ function nextQ(num) {
 		case 2:
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 9;
 				finalStory += "After given a brick by a random stranger, you decide to inscribe a poem into it. "
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 10;
 				finalStory += "After given a brick by a random stranger, you decide to transform it into a piece of artwork that you can sell for money. ";
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 11;
 				finalStory += "After given a brick by a random stranger, you decide to make a piece of art. What kind of art doesn't matter. "
 			} else {
-				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				user.kindArt = userInput.value.toLowerCase();
+				itemsToInsert = [userInput.value.toLowerCase(), userInput.value.toLowerCase()];
 				questionIndex = 12;
 				finalStory += "After given a brick by a random stranger, you decide to make a " + userInput.value + ". ";
 			}
@@ -271,59 +271,59 @@ function nextQ(num) {
 		/*case 2: //not done
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 13;
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 14;
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 15;
 			} else {
 				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 16;
 			}
 			break;
 		case 2: //not done
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 9;
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 10;
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 11;
 			} else {
 				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 12;
 			}
 			break;*/
 		case 5: //not done
 			if(num == 1) {
-				itemsToInsert = "Your teacher";
+				itemsToInsert = ["Your teacher"];
 				user.throwAction = "admit";
 				questionIndex = 21;
 				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
-				itemsToInsert = "Your teacher";
+				itemsToInsert = ["Your teacher"];
 				user.throwAction = "blame";
 				questionIndex = 22;
 				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
-				itemsToInsert = "Your teacher";
-				user.throwAction = "wait"
+				itemsToInsert = ["Your teacher"];
+				user.throwAction = "wait";
 				questionIndex = 23;
 				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
-				itemsToInsert = "Your teacher";
+				itemsToInsert = ["Your teacher", userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
 				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
@@ -331,22 +331,22 @@ function nextQ(num) {
 			break;
 		case 6: //not done
 			if(num == 1) {
-				itemsToInsert = "Your boss";
+				itemsToInsert = ["Your boss"];
 				user.throwAction = "admit";
 				questionIndex = 21;
 				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
-				itemsToInsert = "Your boss";
+				itemsToInsert = ["Your boss"];
 				user.throwAction = "blame";
 				questionIndex = 22;
 				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
-				itemsToInsert = "Your boss";
+				itemsToInsert = ["Your boss"];
 				user.throwAction = "wait"
 				questionIndex = 23;
 				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
-				itemsToInsert = "Your boss";
+				itemsToInsert = ["Your boss", userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
 				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
@@ -354,22 +354,22 @@ function nextQ(num) {
 			break;
 		case 7:
 			if(num == 1) {
-				itemsToInsert = "The stranger";
+				itemsToInsert = ["The stranger"];
 				user.throwAction = "admit";
 				questionIndex = 21;
 				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
-				itemsToInsert = "The stranger";
+				itemsToInsert = ["The stranger"];
 				user.throwAction = "blame";
 				questionIndex = 22;
 				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
-				itemsToInsert = "The stranger";
+				itemsToInsert = ["The stranger"];
 				user.throwAction = "wait"
 				questionIndex = 23;
 				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
-				itemsToInsert = "The stranger";
+				itemsToInsert = ["The stranger", userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
 				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
@@ -377,22 +377,22 @@ function nextQ(num) {
 			break;
 		case 8:
 			if(num == 1) {
-				itemsToInsert = user.throwAt;
+				itemsToInsert = [user.throwAt];
 				user.throwAction = "admit";
 				questionIndex = 21;
 				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. "
 			} else if(num == 2) {
-				itemsToInsert = user.throwAt;
+				itemsToInsert = [user.throwAt];
 				user.throwAction = "blame";
 				questionIndex = 22;
 				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. "
 			} else if(num == 3) {
-				itemsToInsert = user.throwAt;
+				itemsToInsert = [user.throwAt];
 				user.throwAction = "wait"
 				questionIndex = 23;
 				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. "
 			} else {
-				itemsToInsert = user.throwAt;
+				itemsToInsert = [user.throwAt, userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
 				questionIndex = 24;
 				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to " + user.throwAction + ". "
@@ -401,95 +401,95 @@ function nextQ(num) {
 		/*case 2:
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 9;
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 10;
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 11;
 			} else {
 				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 12;
 			}
 			break;
 		case 2:
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 9;
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 10;
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 11;
 			} else {
 				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 12;
 			}
 			break;
 		case 2:
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 9;
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 10;
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 11;
 			} else {
 				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 12;
 			}
 			break;
 		case 2:
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 9;
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 10;
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 11;
 			} else {
 				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 12;
 			}
 			break;
 		case 2:
 			if(num == 1) {
 				user.kindArt = "poem";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 9;
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 10;
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
-				itemsToInsert = "";
+				itemsToInsert = [];
 				questionIndex = 11;
 			} else {
 				user.kindArt = userInput.value;
-				itemsToInsert = userInput.value;
+				itemsToInsert = [userInput.value];
 				questionIndex = 12;
 			}
 			break;*/
@@ -499,11 +499,17 @@ function nextQ(num) {
 }
 
 //used to insert items into a string
-function parse(str) {
-    var args = [].slice.call(arguments, 1),
-        i = 0;
+function parse(str,replace) {
+	if(str.indexOf("%s") == -1) {
+		return str;
+	}
+    return str.substring(0,str.indexOf("%s")) + replace + str.substring(str.indexOf("%s") + 2);
+}
 
-    return str.replace(/%s/g, function() {
-        return args[i++];
-    });
+function parse2(str,arr) {
+	var out = str;
+	for(i = 0; i < arr.length; i++) {
+		out = parse(out, arr[i]);
+	}
+	return out;
 }

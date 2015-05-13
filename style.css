@@ -156,3 +156,7 @@ h1 {
 #identity {
 	text-align:center;
 }
+
+img.preload {
+	display:none;
+}
