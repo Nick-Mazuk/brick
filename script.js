@@ -6,20 +6,42 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["So you're sitting at work and decide to throw a brick at your boss. Your boss turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you're sitting on a sidewalk and decide to throw a brick at a stranger. The stranger turns around and exclaims, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you decide to throw a brick at %s when they aren't looking. They turn around and exclaim, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
-	["So you're inscribing a poem onto your brick when someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" What do you respond?", "\"Who cares about the American Dream\"", "\"The American Dream does not exist\"", "\"I never thought about that\""],
+	["So you're inscribing a poem onto your brick when someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" What do you respond?", "\"Why does the American Dream matter?\"", "\"The American Dream does not exist\"", "\"Can't you see&#8253;\""],
 	["So you're trying to sell your artwork, and a potential buyer insults your work saying, \"No one will ever buy that!\" What do you do?", "Punch them in the face", "Persevere until someone buys it", "Nothing, his opinion doesn't matter"],
 	["So you're talking about the play you just watched in the lobby, and the lead actor overhears your comment about art. They walk towards you to confront you. What do you do?", "Take pride in your beliefs and decide to argue", "\"Remember\" that you have work to finish", "Just stand still"],
 	["So, while you're making %s, Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making %s?\" What do you respond?", "I want to express my emotions", "To settle a deal with another person", "I don't know"],
-	["So you're the king of your dominion, utopolis, and a peasant gave you a brick for saving the kingdom from an earthquake. After responding \"%s,\" the peasant looked insulted. What do you do?", "Show your dominance over him", "Explain to him that it doesn't matter what you think", "Apologize for your rudeness"],
+	["So you're the king of your dominion, Utopolis, and a peasant gave you a brick for saving the kingdom from an earthquake. After responding \"%s,\" the peasant looked insulted. What do you do?", "Show your dominance over him", "Explain to him that it doesn't matter what he thinks", "Apologize for your rudeness"],
 	["So you're sitting %s %s and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble. What do you do?", "Immediately run over to help", "Call for medical assistance", "Wait for someone else to do something"],
 	["%s becomes enraged and throws the brick back. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s  becomes enraged and throws the brick at the other person. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s becomes enraged and throws the brick randomly. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s becomes enraged that you %s and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
-	["The stranger responds, \"What do you mean, '%s?' All art obviously deals with the American Dream! \"", "A", "B", "C"],
-	["Num: 20", "A", "B", "C"],
-	["Num: 21", "A", "B", "C"],
-	["Num: 21", "A", "B", "C"],
+	["The stranger responds, \"What do you mean, '%s?' All art obviously deals with the American Dream! \" What do you do?", "Give up arguing and continue to work", "Try to win the argument", "Move somewhere else peaceful"],
+	["The stranger responds, \"How does <i>that</i> talk about the American Dream?\" How do you respond?", "It symbolizes the metaphorical death of the American Dream", "It shows the opportunity omnipresent in society", "It demonstrates the meaningless of the American Dream"],
+	["Stunned, he hesitates a second only to punch you back after realizing what happened. How do you respond?", "Continue fighting until you win", "Apologize for your absurd reaction", "Run away to stay away from future trouble"],
+	["Months go by, and the only customers you have said disparaging comments. With little chance of success, how do you choose to continue.", "Give up and move on", "Try to create something new with the brick", "Decide to restore world peace with the brick after all the negativity you've recieved"],
+	["While you decide to ignore him, he persists on insulting you and claims he will spread the word of your inferior work. You decide to:", "\"Teach him a lesson\" on what good art is", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
 ];
 var openingScreen;
 var questionContainer;
@@ -270,20 +292,24 @@ function nextQ(num) {
 				itemsToInsert = [user.doNothingAnswer];
 				questionIndex = 13;
 				personalityCount.push(0);
+				finalStory += "So, as the King of Utopolis, a peasant gave you a brick for saving the kingdom from an earthquake. Your response of \"I have better things to do\" insulted the peasant. ";
 			} else if(num == 2) {
 				user.doNothingAnswer = "I have work to do";
 				itemsToInsert = [user.doNothingAnswer];
 				questionIndex = 13;
 				personalityCount.push(1);
+				finalStory += "So, as the King of Utopolis, a peasant gave you a brick for saving the kingdom from an earthquake. Your response of \"I have work to do\" insulted the peasant. ";
 			} else if(num == 3) {
 				user.doNothingAnswer = "Why bother?";
 				itemsToInsert = [user.doNothingAnswer];
 				questionIndex = 13;
 				personalityCount.push(2);
+				finalStory += "So, as the King of Utopolis, a peasant gave you a brick for saving the kingdom from an earthquake. Your response of \"Why should I bother?\" insulted the peasant. ";
 			} else {
 				user.doNothingAnswer = userInput.value;
 				itemsToInsert = [userInput.value];
 				questionIndex = 13;
+				finalStory += "So, as the King of Utopolis, a peasant gave you a brick for saving the kingdom from an earthquake. Your response of \"" + user.doNothingAnswer + "\" insulted the peasant. ";
 			}
 			break;
 		case 4: //not done
@@ -291,19 +317,23 @@ function nextQ(num) {
 				user.location = "city";
 				itemsToInsert = [user.brickAction,"in the city"];
 				questionIndex = 14;
+				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			} else if(num == 2) {
 				user.kindArt = "home";
 				itemsToInsert = [user.brickAction,"at your house"];
 				questionIndex = 14;
+				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			} else if(num == 3) {
 				user.kindArt = "somewhere";
 				itemsToInsert = [user.brickAction,"somewhere"];
 				questionIndex = 14;
 				personalityCount.push(3);
+				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			} else {
 				user.kindArt = userInput.value.toLowerCase();
 				itemsToInsert = [user.brickAction,userInput.value.toLowerCase()];
 				questionIndex = 14;
+				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			}
 			break;
 		case 5: //not done
@@ -412,24 +442,46 @@ function nextQ(num) {
 			break;
 		case 9:
 			if(num == 1) {
-				itemsToInsert = [];
+				itemsToInsert = ["why does the American Dream matter?"];
 				questionIndex = 19;
-				finalStory += "";
+				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"Why does the American Dream matter?\" ";
 				personalityCount.push(0);
 			} else if(num == 2) {
-				itemsToInsert = [];
+				itemsToInsert = ["the American Dream does not exist"];
 				questionIndex = 19;
-				finalStory += "";
+				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"The American Dream does not exist.\" ";
 				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
+				questionIndex = 20;
+				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by retorting, \"Can't you see?\" ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [userInput.value];
 				questionIndex = 19;
-				finalStory += "";
+				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"" + userInput.value + "\" ";
+			}
+			break;
+		case 10:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 21;
+				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to punch them. ";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 22;
+				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You decide to ignore them and persevere unti someone does want to buy it. ";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 23;
+				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to do nothing, as his opinion doesn't matter. ";
 				personalityCount.push(2);
 			} else {
 				itemsToInsert = [];
-				questionIndex = 19;
-				finalStory += "";
+				questionIndex = 24;
+				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to " + userInput.value + ". ";
 			}
 			break;
 		/*case 9:
