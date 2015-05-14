@@ -20,8 +20,8 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["The stranger responds, \"How does <i>that</i> talk about the American Dream?\" How do you respond?", "It symbolizes the metaphorical death of the American Dream", "It shows the opportunity omnipresent in society", "It demonstrates the meaningless of the American Dream"],
 	["Stunned, he hesitates a second only to punch you back after realizing what happened. How do you respond?", "Continue fighting until you win", "Apologize for your absurd reaction", "Run away to stay away from future trouble"],
 	["Months go by, and the only customers you have said disparaging comments. With little chance of success, how do you choose to continue.", "Give up and move on", "Try to create something new with the brick", "Decide to restore world peace with the brick after all the negativity you've recieved"],
-	["While you decide to ignore him, he persists on insulting you and claims he will spread the word of your inferior work. You decide to:", "\"Teach him a lesson\" on what good art is", "B", "C"],
-	["Question", "A", "B", "C"],
+	["While you decide to %s, he persists on insulting you and claims he will spread the word of your inferior work. You decide to:", "\"Teach him a lesson\" on what good art is", "Create a new piece of art that he might like", "Let him leave"],
+	["He leaves peacefully, but you hear a rumor spreading around town that your art is insulting. You need to stop the rumor to sell your work. What do you do?", "Blackmail him", "Hunt him down and kill him", "Reveal to the public the falsehood of the rumors"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
@@ -102,7 +102,7 @@ function nextQuestion(answer) {
 		changeBackground(findMode(personalityCount));
 		nextQ(3);
 	} else if(answer == "d") {
-		answers.push([questionIndex, questionNumber, "D", userInput.value,itemsToInsert]);
+		answers.push([questionIndex, questionNumber, "D", userInput.value, itemsToInsert]);
 		personalityCount.push(3);
 		changeBackground(findMode(personalityCount));
 		nextQ(4);
@@ -317,23 +317,23 @@ function nextQ(num) {
 				user.location = "city";
 				itemsToInsert = [user.brickAction,"in the city"];
 				questionIndex = 14;
-				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			} else if(num == 2) {
-				user.kindArt = "home";
+				user.location = "home";
 				itemsToInsert = [user.brickAction,"at your house"];
 				questionIndex = 14;
-				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			} else if(num == 3) {
-				user.kindArt = "somewhere";
+				user.location = "somewhere";
 				itemsToInsert = [user.brickAction,"somewhere"];
 				questionIndex = 14;
 				personalityCount.push(3);
-				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			} else {
-				user.kindArt = userInput.value.toLowerCase();
-				itemsToInsert = [user.brickAction,userInput.value.toLowerCase()];
+				user.location = userInput.value.toLowerCase();
+				itemsToInsert = [user.location,user.brickAction];
 				questionIndex = 14;
-				finalStory += "So you're sitting " + user.location + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
 			}
 			break;
 		case 5: //not done
@@ -469,7 +469,7 @@ function nextQ(num) {
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to punch them. ";
 				personalityCount.push(0);
 			} else if(num == 2) {
-				itemsToInsert = [];
+				itemsToInsert = ["ignore him"];
 				questionIndex = 22;
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You decide to ignore them and persevere unti someone does want to buy it. ";
 				personalityCount.push(1);
@@ -479,8 +479,8 @@ function nextQ(num) {
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to do nothing, as his opinion doesn't matter. ";
 				personalityCount.push(2);
 			} else {
-				itemsToInsert = [];
-				questionIndex = 24;
+				itemsToInsert = [userInput.value];
+				questionIndex = 22;
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to " + userInput.value + ". ";
 			}
 			break;
