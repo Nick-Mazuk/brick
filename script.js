@@ -205,7 +205,7 @@ function finished() {
 		if(personalityCount.indexOf(0)==personalityCount.indexOf(1)&&personalityCount.indexOf(2)==-1)
 			identity.innerHTML += "<img src='Pictures/perfect existentialist.png' width='100%'><br>You most closely relate to the perfect existentialist";
 		else
-			identity.innerHTML += "You are almost a perfect existentialist
+			identity.innerHTML += "You are almost a perfect existentialist";
 		console.log(12);
 	}
 	console.log(13);
