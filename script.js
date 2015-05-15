@@ -181,6 +181,7 @@ function findMode(array) {
 }
 
 function finished() {
+	console.log("Hello");
 	questionContainer.style.display = "none";
 	results.style.display = "block";
 	var identity = document.getElementById("identity");
