@@ -181,10 +181,13 @@ function findMode(array) {
 }
 
 function finished() {
-	console.log("Hello");
+	console.log(1);
 	questionContainer.style.display = "none";
+	console.log(2);
 	results.style.display = "block";
+	console.log(3);
 	var identity = document.getElementById("identity");
+	console.log(4);
 	if(findMode(personalityCount) == 0) {
 		identity.innerHTML += "<img src='Pictures/stephen.png' width='300px'><br>You most closely relate to Stephen Deadalus";
 	} else if(findMode(personalityCount) == 1) {
