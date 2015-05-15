@@ -8,7 +8,7 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["So you decide to throw a brick at %s when they aren't looking. They turn around and exclaim, \"Who did this&#8253;\" What do you?", "Display audacity and admit to it", "Blame the person next to you", "Wait for someone else to do something"],
 	["So you're inscribing a poem onto your brick when someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" What do you respond?", "\"Why does the American Dream matter?\"", "\"The American Dream does not exist\"", "\"Can't you see&#8253;\""],
 	["So you're trying to sell your artwork, and a potential buyer insults your work saying, \"No one will ever buy that!\" What do you do?", "Punch them in the face", "Persevere until someone buys it", "Nothing, his opinion doesn't matter"],
-	["So you're talking about the play you just watched in the lobby, and the lead actor overhears your comment about art. They walk towards you to confront you. What do you do?", "Take pride in your beliefs and decide to argue", "\"Remember\" that you have work to finish", "Just stand still"],
+	["So you're talking about the play you just watched in the lobby, and the lead actor overhears your comment about art. They walk towards you to confront you. What do you do?", "Take pride in your beliefs and decide to argue", "\"Remember\" that you have work to finish", "Just stand still like nothing happened"],
 	["So, while you're making %s, Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making %s?\" What do you respond?", "I want to express my emotions", "To settle a deal with another person", "I don't know"],
 	["So you're the king of your dominion, Utopolis, and a peasant gave you a brick for saving the kingdom from an earthquake. After responding \"%s,\" the peasant looked insulted. What do you do?", "Show your dominance over him", "Explain to him that it doesn't matter what he thinks", "Apologize for your rudeness"],
 	["So you're sitting %s %s and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble. What do you do?", "Immediately run over to help", "Call for medical assistance", "Wait for someone else to do something"],
@@ -22,9 +22,9 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["Months go by, and the only customers you have said disparaging comments. With little chance of success, how do you choose to continue.", "Give up and move on", "Try to create something new with the brick", "Decide to restore world peace with the brick after all the negativity you've recieved"],
 	["While you decide to %s, he persists on insulting you and claims he will spread the word of your inferior work. You decide to:", "\"Teach him a lesson\" on what good art is", "Create a new piece of art that he might like", "Let him leave"],
 	["He leaves peacefully, but you hear a rumor spreading around town that your art is insulting. You need to stop the rumor to sell your work. What do you do?", "Blackmail him", "Hunt him down and kill him", "Reveal to the public the falsehood of the rumors"],
-	["Question", "A", "B", "C"],
-	["Question", "A", "B", "C"],
-	["Question", "A", "B", "C"],
+	["After arguing with the actor for a while, the actor finally challenges, \"How about this: if you create a piece of art out of this brick, I will conceed that all art is equal\" What do you do?", "Accept his challenge", "Deny the challenge", "Ponder the challenge"],
+	["The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. What do you do?", "Admit it", "Dodge the bullet and explain that you need to leave now", "Argue that he is wrong"],
+	["Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. What do you say?", "", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
@@ -204,7 +204,7 @@ function finished() {
 
 function showQuestion(array) {
 	var output = "<div class='question'><h3>" + (array[1]) + ". ";
-	output += parse(questions[array[0]][0],array[4]) + "</h3>";
+	output += parse2(questions[array[0]][0],array[4]) + "</h3>";
 	output += "<p>" + array[2] + ". " + array[3] + "</p></div>";
 	results.innerHTML += output;
 }
@@ -277,7 +277,7 @@ function nextQ(num) {
 				user.kindArt = "any kind of art";
 				itemsToInsert = [];
 				questionIndex = 11;
-				finalStory += "After given a brick by a random stranger, you decide to make a piece of art. What kind of art doesn't matter. ";
+				finalStory += "After given a brick by a random stranger, you decide to make a piece of art. But you can't decide on what type of art because you believe all art is the same. ";
 				personalityCount.push(2);
 			} else {
 				user.kindArt = userInput.value.toLowerCase();
@@ -484,30 +484,31 @@ function nextQ(num) {
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to " + userInput.value + ". ";
 			}
 			break;
-		/*case 9:
+		case 11:
 			if(num == 1) {
 				itemsToInsert = [];
-				questionIndex = 15;
-				finalStory += "";
+				questionIndex = 25;
+				finalStory += "Some time later, you decide to watch a play. At the reception after the play, the lead actor overhears your stance that all art is the same, and heads in your direction. You decide to defend your stance and argue. ";
 				personalityCount.push(0);
 			} else if(num == 2) {
 				itemsToInsert = [];
-				questionIndex = 16;
-				finalStory += "";
+				questionIndex = 26;
+				finalStory += "Some time later, you decide to watch a play. At the reception after the play, the lead actor overhears your stance that all art is the same, and heads in your direction. You decide suddenly leave because you \"remembered\" work you had to do. ";
 				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
-				questionIndex = 17;
-				finalStory += "";
+				questionIndex = 27;
+				finalStory += "Some time later, you decide to watch a play. At the reception after the play, the lead actor overhears your stance that all art is the same, and heads in your direction. You decide to stand still like nothing happened. ";
 				personalityCount.push(2);
 			} else {
 				itemsToInsert = [];
-				questionIndex = 18;
-				finalStory += "";
+				questionIndex = 28;
+				finalStory += "Some time later, you decide to watch a play. At the reception after the play, the lead actor overhears your stance that all art is the same, and heads in your direction. You decide to " + userInput.value.toLowerCase() + ". ";
 			}
-			break;*/
+			break;
 		default:
 			finished();
+			break;
 	}
 }
 
