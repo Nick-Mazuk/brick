@@ -211,9 +211,9 @@ function finished() {
 	console.log(13);
 	document.getElementById("story").innerHTML = finalStory;
 	console.log(14);
-	for(i = 0; i < answers.length; i++) {
-		showQuestion(answers[i]);
-		console.log(i);
+	for(ij = 0; ij < answers.length; ij++) {
+		showQuestion(answers[ij]);
+		console.log(ij);
 	}
 	console.log("done");
 }
