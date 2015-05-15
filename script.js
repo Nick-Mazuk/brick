@@ -509,7 +509,6 @@ function nextQ(num) {
 			break;
 		default:
 			finished();
-			break;
 	}
 }
 
