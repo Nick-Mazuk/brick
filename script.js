@@ -24,7 +24,7 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["He leaves peacefully, but you hear a rumor spreading around town that your art is insulting. You need to stop the rumor to sell your work. What do you do?", "Blackmail him", "Hunt him down and kill him", "Reveal to the public the falsehood of the rumors"],
 	["After arguing with the actor for a while, the actor finally challenges, \"How about this: if you create a piece of art out of this brick, I will conceed that all art is equal\" What do you do?", "Accept his challenge", "Deny the challenge", "Ponder the challenge"],
 	["The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. What do you do?", "Admit it", "Dodge the bullet and explain that you need to leave now", "Argue that he is wrong"],
-	["Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. What do you say?", "", "B", "C"],
+	["Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. What do you say?", "I didn't mean to hurt your feelings, I was just expressing my opinion", "I <i>don't</i> care about you", "Sorry, I didn't mean what I said"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
