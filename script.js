@@ -189,21 +189,33 @@ function finished() {
 	var identity = document.getElementById("identity");
 	console.log(4);
 	if(findMode(personalityCount) == 0) {
+		console.log(5);
 		identity.innerHTML += "<img src='Pictures/stephen.png' width='300px'><br>You most closely relate to Stephen Deadalus";
+		console.log(6);
 	} else if(findMode(personalityCount) == 1) {
+		console.log(7);;
 		identity.innerHTML += "You most closely relate to Gregor";
+		console.log(8);
 	} else if(findMode(personalityCount) == 2) {
+		console.log(9);
 		identity.innerHTML += "You most closely relate to Meursault";
+		console.log(10);
 	} else if(findMode(personalityCount) == 3) {
+		console.log(11);
 		if(personalityCount.indexOf(0)==personalityCount.indexOf(1)&&personalityCount.indexOf(2)==-1)
 			identity.innerHTML += "<img src='Pictures/perfect existentialist.png' width='100%'><br>You most closely relate to the perfect existentialist";
 		else
-			identity.innerHTML += "You are almost a perfect existentialist";
+			identity.innerHTML += "You are almost a perfect existentialist
+		console.log(12);
 	}
+	console.log(13);
 	document.getElementById("story").innerHTML = finalStory;
+	console.log(14);
 	for(i = 0; i < answers.length; i++) {
 		showQuestion(answers[i]);
+		console.log(i);
 	}
+	console.log("done");
 }
 
 function showQuestion(array) {
