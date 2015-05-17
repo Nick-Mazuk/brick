@@ -25,9 +25,9 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["After arguing with the actor for a while, the actor finally challenges, \"How about this: if you create a piece of art out of this brick, I will conceed that all art is equal\" What do you do?", "Accept his challenge", "Deny the challenge", "Ponder the challenge"],
 	["The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. What do you do?", "Admit it", "Dodge the bullet and explain that you need to leave now", "Argue that he is wrong"],
 	["Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. What do you say?", "I didn't mean to hurt your feelings, I was just expressing my opinion", "I <i>don't</i> care about you", "Sorry, I didn't mean what I said"],
-	["%s", "A", "B", "C"],
-	["Question", "A", "B", "C"],
-	["Question", "A", "B", "C"],
+	["However, your plan to %s fails as the actor still catches up to you. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. What do you do?", "Admit it", "Dodge the bullet and explain that you need to leave now", "Argue that he is wrong"],
+	["He then asks how making %s will help you %s? What do you say?", "It won't", "Can't you see?", "I don't know, put it passes the time"],
+	["\"Ok.\" Rosenstern says, \"but at least do something meaningful with your life.\" How do you respond?", "Ignore him", "Start thinking about what is meaningful", "Maybe do something meaningful later"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
@@ -506,6 +506,50 @@ function nextQ(num) {
 				finalStory += "Some time later, you decide to watch a play. At the reception after the play, the lead actor overhears your stance that all art is the same, and heads in your direction. You decide to " + userInput.value.toLowerCase() + ". ";
 			}
 			break;
+		case 12:
+			if(num == 1) {
+				itemsToInsert = [user.kindArt, "express your emotions"];
+				questionIndex = 29;
+				finalStory += "So, while you're making " + user.kindArt + ", Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making " + user.kindArt + "?\". You say that it will help you express your emotions. ";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [user.kindArt, "to settle a deal with another person"];
+				questionIndex = 29;
+				finalStory += "So, while you're making " + user.kindArt + ", Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making " + user.kindArt + "?\". You say that it will help you settle a deal with another person. ";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 30;
+				finalStory += "So, while you're making " + user.kindArt + ", Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making " + user.kindArt + "?\". You say that you don't know. ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [user.kindArt, userInput.value];
+				questionIndex = 29;
+				finalStory += "So, while you're making " + user.kindArt + ", Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making " + user.kindArt + "?\". You say that it will " + userInput.value + ". ";
+			}
+			break;
+		case 13:
+			if(num == 1) {
+				itemsToInsert = [user.kindArt, "express your emotions"];
+				questionIndex = 31;
+				finalStory += ". ";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [user.kindArt];
+				questionIndex = 32;
+				finalStory += ". ";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 33;
+				finalStory += ". ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 34;
+				finalStory += ". ";
+			}
+			break;
 		default:
 			finished();
 	}
@@ -526,15 +570,3 @@ function parse2(str,arr) {
 	}
 	return out;
 }
-
-/*General story outline:
-Throw it.
-Run away.
-Try to make a new life.
-Gets caught (decision catches up)
-Must make a choice on how to react
-Can save others by being ridiculed (become a PSA)
-
-
-Art:
-*/
