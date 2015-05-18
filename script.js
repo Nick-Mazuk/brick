@@ -16,7 +16,7 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["%s  becomes enraged and throws the brick at the other person. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s becomes enraged and throws the brick randomly. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s becomes enraged that you %s and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
-	["The stranger responds, \"What do you mean, '%s?' All art obviously deals with the American Dream! \" What do you do?", "Give up arguing and continue to work", "Try to win the argument", "Move somewhere else peaceful"],
+	["The stranger responds, \"What do you mean, '%s'? All art obviously deals with the American Dream!\" What do you do?", "Give up arguing and continue to work", "Try to win the argument", "Move somewhere else peaceful"],
 	["The stranger responds, \"How does <i>that</i> talk about the American Dream?\" How do you respond?", "It symbolizes the metaphorical death of the American Dream", "It shows the opportunity omnipresent in society", "It demonstrates the meaningless of the American Dream"],
 	["Stunned, he hesitates a second only to punch you back after realizing what happened. How do you respond?", "Continue fighting until you win", "Apologize for your absurd reaction", "Run away to stay away from future trouble"],
 	["Months go by, and the only customers you have said disparaging comments. With little chance of success, how do you choose to continue.", "Give up and move on", "Try to create something new with the brick", "Decide to restore world peace with the brick after all the negativity you've recieved"],
@@ -28,6 +28,27 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["However, your plan to %s fails as the actor still catches up to you. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. What do you do?", "Admit it", "Dodge the bullet and explain that you need to leave now", "Argue that he is wrong"],
 	["He then asks how making %s will help you %s? What do you say?", "It won't", "Can't you see?", "I don't know, put it passes the time"],
 	["\"Ok.\" Rosenstern says, \"but at least do something meaningful with your life.\" How do you respond?", "Ignore him", "Start thinking about what is meaningful", "Maybe do something meaningful later"],
+	["The peasant becomes royally annoyed at your actions, King \"more-important-than-everyone-else.\" You now see that your reputation is at stake, and if you don't rectify the situation, it might cause a rebelion. What do you do?", "Let the rebelion happen and defeat the rebels with your large army", "Explain that you work to keep the kingdom united", "Apologize to him"],
+	["The peasant is about to yell at you, but has the brains to realize that you won't care about anything he will say. Instead he stomps off. What do you do?", "Take no action", "Give him a sharp warning to not do anything stupid, like cause an earthquake", "Thank him for the brick"],
+	["The peasant thanks your Majesty for being benevolent. He wonders, though, \"Why does the brick not matter?\" How do you respond?", "In the bigger picture, nothing matters", "Everyone must make decisions on what is important, and the brick is not one of those", "I shouldn't be tasked with building"],
+	["Even though you %s, the peasant is so annoyed at your previous words that he ignores you and stomps off. What do you do?", "Take no action", "Give him a sharp warning to not do anything stupid", "Thank him for the brick in vain"],
+	["You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding. What do you do?", "Cry while he dies", "Console him while he dies", "Run to try to find help"],
+	["Even after several minutes, you cannot find medical assistance. What do you do?", "Continue searching", "Check on the child", "Give up"],
+	["In midst of the chaos, no one else sees the child. What do you do?", "Nothing, leave the child to die", "Go check on the child yourself", "Go to try to convince someone else to help"],
+	["What do you think the child's name is?", "Noah", "Liam", "Mason"],
+	["Finally out of the city, what do you do?", "Make a new life for yourself", "Go to sleep", "Find some food"],
+	["Finally home, what do you do?", "Make a new life for yourself", "Go to sleep", "Find some food"],
+	["Finally away from the crime scene, what do you do?", "Make a new life for yourself", "Go to sleep", "Find some food"],
+	["Finally at %s, what do you do?", "Make a new life for yourself", "Go to sleep", "Find some food"],
+	["You give up, and eventually the stranger leaves, but you can't stop thinking about the American Dream. What do you do?", "Forget about it", "Incorperate it into your work", "Continue working"],
+	["The stranger argues, \"The American Dream states that Americans have the possibility of becoming better off than they were before. Isn't making this poem making you better than you were before?\" How do you respond?", "That doesn't prove the American Dream exists", "It isn't making me better", "Show me proof of the American Dream"],
+	["The stranger argues, \"The American Dream matters because it means you can become better off than you are right now. Wouldn't you want that hope?\" How do you respond?", "Then why does it need to be in the poem?", "You enjoy the life you live now", "I don't need hope"],
+	["The stranger retorts, \"There is no need to argue with you. You just make things loathesome\" and leaves. What do you do?", "Continue your work", "Reflect on the situation", "Yell back at him that he should leave"],
+	["Where do you decide to move to?", "Your house", "The local coffee shop", "A friends house"],
+	["Annoyed at your \"absurd\" actions, the stranger leaves. Do you think your actions were absurd?", "Yes", "No", "Well, maybe"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
@@ -200,6 +221,7 @@ function finished() {
 	for(ij = 0; ij < answers.length; ij++) {
 		showQuestion(answers[ij]);
 	}
+	console.log(user);
 }
 
 function showQuestion(array) {
@@ -236,19 +258,19 @@ function nextQ(num) {
 			break;
 		case 1:
 			if(num == 1) {
-				user.throwAt = "teacher";
+				user.throwAt = "your teacher";
 				itemsToInsert = [];
 				questionIndex = 5;
 				finalStory += "After given a brick by a random stranger, you decide to bring it to school to throw at your teacher. ";
 				personalityCount.push(0);
 			} else if(num == 2) {
-				user.throwAt = "boss";
+				user.throwAt = "your boss";
 				itemsToInsert = [];
 				questionIndex = 6;
 				finalStory += "After given a brick by a random stranger, you decide to bring it to work to throw at your boss. ";
 				personalityCount.push(1);
 			} else if(num == 3) {
-				user.throwAt = "anyone";
+				user.throwAt = "the stranger";
 				itemsToInsert = [];
 				questionIndex = 7;
 				finalStory += "After given a brick by a random stranger, you decide to throw it at a random person. ";
@@ -317,23 +339,23 @@ function nextQ(num) {
 				user.location = "city";
 				itemsToInsert = [user.brickAction,"in the city"];
 				questionIndex = 14;
-				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble. ";
 			} else if(num == 2) {
 				user.location = "home";
 				itemsToInsert = [user.brickAction,"at your house"];
 				questionIndex = 14;
-				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble. ";
 			} else if(num == 3) {
 				user.location = "somewhere";
 				itemsToInsert = [user.brickAction,"somewhere"];
 				questionIndex = 14;
 				personalityCount.push(3);
-				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble. ";
 			} else {
 				user.location = userInput.value.toLowerCase();
 				itemsToInsert = [user.location,user.brickAction];
 				questionIndex = 14;
-				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble.";
+				finalStory += "So you're sitting " + user.location + " " + user.brickAction + " and an earthquake strikes. You survive the earthquake, but see a small, injured child stuck under a pile of rubble. ";
 			}
 			break;
 		case 5: //not done
@@ -446,11 +468,13 @@ function nextQ(num) {
 				questionIndex = 19;
 				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"Why does the American Dream matter?\" ";
 				personalityCount.push(0);
+				user.AmericanDream = "why does the American Dream matter";
 			} else if(num == 2) {
 				itemsToInsert = ["the American Dream does not exist"];
 				questionIndex = 19;
 				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"The American Dream does not exist.\" ";
 				personalityCount.push(1);
+				user.AmericanDream = "the American Dream does not exist";
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 20;
@@ -460,6 +484,7 @@ function nextQ(num) {
 				itemsToInsert = [userInput.value];
 				questionIndex = 19;
 				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"" + userInput.value + "\" ";
+				user.AmericanDream = userInput.value;
 			}
 			break;
 		case 10:
@@ -530,24 +555,152 @@ function nextQ(num) {
 			break;
 		case 13:
 			if(num == 1) {
-				itemsToInsert = [user.kindArt, "express your emotions"];
+				itemsToInsert = [];
 				questionIndex = 31;
-				finalStory += ". ";
+				finalStory += "You decide to show your dominance over the peasant in an effort to fix the situation. ";
 				personalityCount.push(0);
 			} else if(num == 2) {
 				itemsToInsert = [user.kindArt];
 				questionIndex = 32;
-				finalStory += ". ";
+				finalStory += "You decide to explain to the peasant that his thoughts don't matter. ";
 				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 33;
-				finalStory += ". ";
+				finalStory += "You decide to appologize for your rudeness in an effort to fix the situation. ";
 				personalityCount.push(2);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 34;
-				finalStory += ". ";
+				finalStory += "You decide to " + userInput.value + " in an effort to fix the situation. ";
+			}
+			break;
+		case 14:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 31;
+				finalStory += "You run over to help the injured child, but find that he is bleeding at a dangerous rate. ";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [user.kindArt];
+				questionIndex = 32;
+				finalStory += "After several minutes searching for medical assistance, you cannot find any. ";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 33;
+				finalStory += "After several minutes, no one else is able to see the child. ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 34;
+				finalStory += "You decide to " + userInput.value + " in an effort to fix the situation. ";
+			}
+			break;
+		case 16:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 39;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run out of the city. ";
+				user.location = "out of the city";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 40;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run home. ";
+				user.location = "home";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 41;
+				user.location = "away";
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run away. ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 42;
+				user.location = userInput.value
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run " + userInput.value + ". ";
+			}
+			break;
+		case 17:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 39;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run out of the city. ";
+				user.location = "out of the city";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 40;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run home. ";
+				user.location = "home";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 41;
+				user.location = "away";
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run away. ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 42;
+				user.location = userInput.value
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run " + userInput.value + ". ";
+			}
+			break;
+		case 18:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 39;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run out of the city. ";
+				user.location = "out of the city";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 40;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run home. ";
+				user.location = "home";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 41;
+				user.location = "away";
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run away. ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 42;
+				user.location = userInput.value
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run " + userInput.value + ". ";
+			}
+			break;
+		case 19:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 43;
+				finalStory += "The stranger responds, \"What do you mean, '" + user.AmericanDream + "'? All art obviously deals with the American Dream!\" You give up the arguement and go back go work. ";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [];
+				if(user.AmericanDream == "the American Dream does not exist") {
+					questionIndex = 44;
+				} else if(user.AmericanDream == "why does the American Dream matter") {
+					questionIndex = 45;
+				} else {
+					questionIndex = 46;
+				}
+				finalStory += "The stranger responds, \"What do you mean, '" + user.AmericanDream + "'? All art obviously deals with the American Dream!\" You try to win the arguement. ";
+				personalityCount.push(1);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 47;
+				finalStory += "The stranger responds, \"What do you mean, '" + user.AmericanDream + "'? All art obviously deals with the American Dream!\" You move somewhere more peaceful to work. ";
+				personalityCount.push(2);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 48;
+				finalStory += "The stranger responds, \"What do you mean, '" + user.AmericanDream + "'? All art obviously deals with the American Dream!\" You then " + userInput.value + ". ";
 			}
 			break;
 		default:
