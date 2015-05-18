@@ -923,6 +923,178 @@ function nextQ(num) {
 				finished();
 			}
 			break;
+		case 28:
+			if(num == 1) {
+				finalStory += parse2("However, your plan to %s fails as the actor still catches up to you. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You admit it. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("However, your plan to %s fails as the actor still catches up to you. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You dodge the bullet and explain that you need to leave now. ",itemsToInsert);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("However, your plan to %s fails as the actor still catches up to you. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You argue that he is wrong. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("However, your plan to %s fails as the actor still catches up to you. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 29:
+			if(num == 1) {
+				finalStory += parse2("He then asks how making %s will help you express your emotions. You claim that it won't. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("He then asks how making %s will help you express your emotions. You respond, \"Can't you see?.\" ",itemsToInsert);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("He then asks how making %s will help you express your emotions. You respond that you don't know, but it passes the time. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("He then asks how making %s will help you express your emotions. You respond, \"" + userInput.value.toLowerCase() + ".\" ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 30:
+			if(num == 1) {
+				finalStory += parse2("\"Ok.\" Rosenstern says, \"but at least do something meaningful with your life.\" You ignore him. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("\"Ok.\" Rosenstern says, \"but at least do something meaningful with your life.\" You start thinking about what is meaningful. ",itemsToInsert);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("\"Ok.\" Rosenstern says, \"but at least do something meaningful with your life.\" You might do something meaningful later. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("\"Ok.\" Rosenstern says, \"but at least do something meaningful with your life.\" You " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 31:
+			if(num == 1) {
+				finalStory += parse2("The peasant becomes royally annoyed at your actions, King \"more-important-than-everyone-else.\" You now see that your reputation is at stake, and if you don't rectify the situation, it might cause a rebelion. Because of your mighty power, however, you let the rebelion happen and defeat the rebels with your large army. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("The peasant becomes royally annoyed at your actions, King \"more-important-than-everyone-else.\" You now see that your reputation is at stake, and if you don't rectify the situation, it might cause a rebelion. Consequently, you explain to the peasant that you work to keep the kingdom united. ",itemsToInsert);
+				perfect = true;
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("The peasant becomes royally annoyed at your actions, King \"more-important-than-everyone-else.\" You now see that your reputation is at stake, and if you don't rectify the situation, it might cause a rebelion. Consequently, you appoligize to the peasant. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("The peasant becomes royally annoyed at your actions, King \"more-important-than-everyone-else.\" You now see that your reputation is at stake, and if you don't rectify the situation, it might cause a rebelion. You then " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 32:
+			if(num == 1) {
+				finalStory += parse2("The peasant is about to yell at you, but has the brains to realize that you won't care about anything he will say. Instead he stomps off. You take no action. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("The peasant is about to yell at you, but has the brains to realize that you won't care about anything he will say. Instead he stomps off. You give him a sharp warning to not do anything stupid, like cause an earthquake. ",itemsToInsert);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("The peasant is about to yell at you, but has the brains to realize that you won't care about anything he will say. Instead he stomps off. You then thank him for the brick. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("The peasant is about to yell at you, but has the brains to realize that you won't care about anything he will say. Instead he stomps off. You then " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 33:
+			if(num == 1) {
+				finalStory += parse2("The peasant thanks your Majesty for being benevolent. He wonders, though, \"Why does the brick not matter?\". You respond that in the bigger picture, nothing matters. ",itemsToInsert);
+				personalityCount.push(0);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("The peasant thanks your Majesty for being benevolent. He wonders, though, \"Why does the brick not matter?\". You respond that everyone must make decisions on what is important and that the brick is not one of those. ",itemsToInsert);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("The peasant thanks your Majesty for being benevolent. He wonders, though, \"Why does the brick not matter?\". You respond that you shouldn't be tasked with building. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("The peasant thanks your Majesty for being benevolent. He wonders, though, \"Why does the brick not matter?\". You respond, \"" + userInput.value.toLowerCase() + ".\" ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 34:
+			if(num == 1) {
+				finalStory += parse2("Even though you %s, the peasant is so annoyed at your previous words that he ignores you and stomps off. You take no action. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("Even though you %s, the peasant is so annoyed at your previous words that he ignores you and stomps off. You give him a sharp warning to not do anything stupid. ",itemsToInsert);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("Even though you %s, the peasant is so annoyed at your previous words that he ignores you and stomps off. You thank him for the brick in vain. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("Even though you %s, the peasant is so annoyed at your previous words that he ignores you and stomps off. You " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 35:
+			if(num == 1) {
+				finalStory += parse2("You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you cry for it while it dies. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you console it while it dies. ",itemsToInsert);
+				perfect = true;
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you run to try to find help. ",itemsToInsert);
+				questionIndex = 36;
+				personalityCount.push(0);
+			} else {
+				finalStory += parse2("You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 36:
+			if(num == 1) {
+				finalStory += parse2("Even after several minutes, you cannot find medical assistance, but you continue searching anyways. ",itemsToInsert);
+				personalityCount.push(0);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("Even after several minutes, you cannot find medical assistance, so you check on the child. ",itemsToInsert);
+				personalityCount.push(0);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("Even after several minutes, you cannot find medical assistance, so you give up. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("Even after several minutes, you cannot find medical assistance, so you " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 37:
+			if(num == 1) {
+				finalStory += parse2("In midst of the chaos, no one else sees the child, but you do nothing and leave the child. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("In midst of the chaos, no one else sees the child, so you go check on the child yourself. ",itemsToInsert);
+				questionIndex = 35;
+				personalityCount.push(0);
+			} else if(num == 3) {
+				finalStory += parse2("In midst of the chaos, no one else sees the child, so you convince someone else to help. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("In midst of the chaos, no one else sees the child, so you " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
+		case 38:
+			if(num == 1) {
+				finalStory += parse2("You guess that the child's name is Noah. ",itemsToInsert);
+				finished();
+			} else if(num == 2) {
+				finalStory += parse2("You guess that the child's name is Liam. ",itemsToInsert);
+				finished();
+			} else if(num == 3) {
+				finalStory += parse2("You guess that the child's name is Mason. ",itemsToInsert);
+				finished();
+			} else {
+				finalStory += parse2("You guess that the child's name is " + userInput.value.toLowerCase() + ". ",itemsToInsert);
+				finished();
+			}
+			break;
 		case 39:
 			if(num == 1) {
 				itemsToInsert = ["make a new life for yourself"];
