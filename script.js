@@ -245,6 +245,7 @@ function finished() {
 	} else {
 		identity.innerHTML += "<img src='Pictures/almost perfect.png' style='width:255px;'><br>You are not the perfect existentialist";
 	}
+	finalStory += "Then you died. ";
 	document.getElementById("story").innerHTML = finalStory;
 	for(ij = 0; ij < answers.length; ij++) {
 		showQuestion(answers[ij]);
@@ -504,7 +505,7 @@ function nextQ(num) {
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 19;
-				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"" + userInput.value + "\" ";
+				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"" + userInput.value + ".\" ";
 				user.AmericanDream = userInput.value;
 			}
 			break;
@@ -818,7 +819,7 @@ function nextQ(num) {
 				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to \"teach him a lesson\" on what good art is. ";
 			} else if(num == 2) {
 				itemsToInsert = [];
-				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to create a new piece of art that he might like. In an effort to sell your artwork, you helped civilize the world by pleasing this angered man. You are the perfect existentialist.";
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to create a new piece of art that he might like. In an effort to sell your artwork, you helped civilize the world by pleasing this angered man. You are the perfect existentialist. ";
 				personalityCount.push(0);
 				perfect = true;
 				finished();
