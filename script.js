@@ -17,10 +17,10 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["%s becomes enraged and throws the brick randomly. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["%s becomes enraged that you %s and throws the brick at you. Fearing a large fight, you decide to run away. Where do you go?", "Out of the city", "Back home", "Anywhere but here"],
 	["The stranger responds, \"What do you mean, '%s'? All art obviously deals with the American Dream!\" What do you do?", "Give up arguing and continue to work", "Try to win the argument", "Move somewhere else peaceful"],
-	["The stranger responds, \"How does <i>that</i> talk about the American Dream?\" How do you respond?", "It symbolizes the metaphorical death of the American Dream", "It shows the opportunity omnipresent in society", "It demonstrates the meaningless of the American Dream"],
+	["The stranger responds, \"How does <i>that</i> talk about the American Dream?\" How do you respond?", "It symbolizes the metaphorical death of the American Dream", "It shows the opportunity omnipresent in society", "It demonstrates the meaninglessness of the American Dream"],
 	["Stunned, he hesitates a second only to punch you back after realizing what happened. How do you respond?", "Continue fighting until you win", "Apologize for your absurd reaction", "Run away to stay away from future trouble"],
-	["Months go by, and the only customers you have said disparaging comments. With little chance of success, how do you choose to continue.", "Give up and move on", "Try to create something new with the brick", "Decide to restore world peace with the brick after all the negativity you've recieved"],
-	["While you decide to %s, he persists on insulting you and claims he will spread the word of your inferior work. You decide to:", "\"Teach him a lesson\" on what good art is", "Create a new piece of art that he might like", "Let him leave"],
+	["Months go by, and the only customers you have said disparaging comments. With little chance of success, how do you choose to continue?", "Give up and move on", "Try to create something new with the brick", "Decide to restore world peace with the brick after all the negativity you've recieved"],
+	["While you %s, he persists on insulting you and claims he will spread the word of your inferior work. You decide to:", "\"Teach him a lesson\" on what good art is", "Create a new piece of art that he might like", "Let him leave"],
 	["He leaves peacefully, but you hear a rumor spreading around town that your art is insulting. You need to stop the rumor to sell your work. What do you do?", "Blackmail him", "Hunt him down and kill him", "Reveal to the public the falsehood of the rumors"],
 	["After arguing with the actor for a while, the actor finally challenges, \"How about this: if you create a piece of art out of this brick, I will conceed that all art is equal\" What do you do?", "Accept his challenge", "Deny the challenge", "Ponder the challenge"],
 	["The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. What do you do?", "Admit it", "Dodge the bullet and explain that you need to leave now", "Argue that he is wrong"],
@@ -46,6 +46,42 @@ var questions = [["If I were to give you a brick, what would you do?", "Throw it
 	["The stranger retorts, \"There is no need to argue with you. You just make things loathesome\" and leaves. What do you do?", "Continue your work", "Reflect on the situation", "Yell back at him that he should leave"],
 	["Where do you decide to move to?", "Your house", "The local coffee shop", "A friends house"],
 	["Annoyed at your \"absurd\" actions, the stranger leaves. Do you think your actions were absurd?", "Yes", "No", "Well, maybe"],
+	["The stranger notes, \"Well, I don't see that, but it must be in there and I believe you. Bye.\" The stranger leaves. What are you thinking right now?", "That was ackward", "At least he is gone now", "I can't believe he believed that!"],
+	["The stranger retorts, \"Well, that isn't the point, but I guess that is good enough.\" The stranger leaves. When you are about to return to work, you notice something. What do you notice?", "A person standing alone, looking like they need help", "A tree standing peacefully", "A brick"],
+	["You and the potential buyer continue fighting until you throw him into a wall, accidentally killing him. You are now a murderer. What do you do?", "Dispose of the body", "Turn yourself into the police to try to get a better deal", "Go into hiding"],
+	["After sensibly apologizing, the potential buyer unsensibly punches you again and says, \"That one is for good measure\" and walks out the door. What do you do?", "Call the police", "Continue trying to sell like nothing happened", "Go into hiding"],
+	["Where do you go?", "Home", "To a friend's house", "To another city"],
+	["Though you %s, the stranger stomps out the door, yelling, \"You'll pay for this!\" What do you do?", "Nothing", "Call the police", "Try to sell the item to another person"],
+	["As soon as you are about to %s, a customer walks in and wishes to buy your artwork. What do you say?", "Sorry, it's not for sale anymore", "Thank you, it will be $20", "Go ahead, you can have it for free"],
+	["Though you try to \"teach him a lesson,\" he leaves before you can do so. What do you do?", "Run after him", "Call the police on account of slander", "Let him leave"],
+	["After you let him leave, what do you do?", "Call the police on account of slander", "Try to sell the brick to someone else", "Do nothing"],
+	["While you try to %s, he leaves anyways. What do you do?", "Nothing", "Try to sell the brick to another person", "Call the police on account of slander"],
+	["What do you make?", "A sculpture of an actor", "A \"brick airplane\"", "Leave it as it is, it is a fine piece of art already"],
+	["The actor become disgusted at you because you want to argue but are too craven to argue. What do you do?", "Propose your own challenge", "Insist that you are right", "Accept the challenge"],
+	["The actor is tired of waiting for you to ponder the challenge and walks away in disgust, what do you do?", "CHase after the actor to accept the challenge", "Forget like the entire event happened", "Leave"],
+	["The actor looks confused on how you can respond \"%s\" in response to a challenge and assumes your response means \"yes\". What, then, will you make?", "A sculpture of an actor", "A \"brick airplane\"", "Leave it as it is, it is a fine piece of art already"],
+	["While you are about to %s, a police officer suddenly arrests you for throwing the brick. You find out that because you threw the brick, your punishment is for death. How do you react?", "You become furious and kill the officer", "You comply, but only because you feel it will be the best way", "Proudly to show to everyone what not to be like"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
+	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
 	["Question", "A", "B", "C"],
@@ -73,7 +109,7 @@ var optionB;
 var optionC;
 var optionD;
 var userInput;
-var numQuestions = 20;
+var numQuestions = 10;
 var results;
 var questionIndex = 0;
 var finalStory = "";
@@ -84,6 +120,8 @@ var user = {
 }
 var answers = [];
 var personalityCount = [];
+var perfect = false; //true if a perfect
+var areFinished = false; //true if the story is finished
 
 function start() {
 	openingScreen = document.getElementById("openingScreen");
@@ -112,20 +150,20 @@ function clickScreen() {
 function nextQuestion(answer) {
 	if(answer == "a") {
 		answers.push([questionIndex, questionNumber, "A", optionA.innerHTML.substring(3),itemsToInsert]);
-		changeBackground(findMode(personalityCount));
+		changeBackground(perfect);
 		nextQ(1);
 	} else if(answer == "b") {
 		answers.push([questionIndex, questionNumber, "B", optionB.innerHTML.substring(3),itemsToInsert]);
-		changeBackground(findMode(personalityCount));
+		changeBackground(perfect);
 		nextQ(2);
 	} else if(answer == "c") {
 		answers.push([questionIndex, questionNumber, "C", optionC.innerHTML.substring(3),itemsToInsert]);
-		changeBackground(findMode(personalityCount));
+		changeBackground(perfect);
 		nextQ(3);
 	} else if(answer == "d") {
 		answers.push([questionIndex, questionNumber, "D", userInput.value, itemsToInsert]);
-		personalityCount.push(3);
-		changeBackground(findMode(personalityCount));
+		personalityCount.push(0);
+		changeBackground(perfect);
 		nextQ(4);
 	}
 	if (questionNumber >= numQuestions || questionNumber > questions.length - 1) {
@@ -165,18 +203,13 @@ function printArray (array) {
 	console.log(output.substring(0,output.length-2));
 }
 
-function changeBackground (color) {
-	if(color == 0 && questionNumber > 8) {
-		document.body.style.backgroundColor = "#FF3300";
-	} else if (color == 1 && questionNumber > 8) {
-		document.body.style.backgroundColor = "#00CC00";
-	} else if (color == 2 && questionNumber > 8) {
-		document.body.style.backgroundColor = "#0066FF";
-	} else if (color == 3 && questionNumber > 8) {
-		if(personalityCount.indexOf(0)==personalityCount.indexOf(1)&&personalityCount.indexOf(2)==-1)
-			document.body.style.backgroundColor = "#FFFF00";
-		else
-			document.body.style.backgroundColor = "#FF00FF";
+function changeBackground (input) {
+	if(input && personalityCount.length / answers.length > 0.6) {
+		document.body.style.backgroundColor = "#FFFF00";
+	} else if((input || personalityCount.length / answers.length > 0.6) && (questionNumber > 3 || areFinished)) {
+		document.body.style.backgroundColor = "#FFA500";
+	} else {
+		document.body.style.backgroundColor = "#DDDDDD";
 	}
 }
 
@@ -205,23 +238,20 @@ function finished() {
 	questionContainer.style.display = "none";
 	results.style.display = "block";
 	var identity = document.getElementById("identity");
-	if(findMode(personalityCount) == 0) {
-		identity.innerHTML += "<img src='Pictures/stephen.png' width='300px'><br>You most closely relate to Stephen Deadalus";
-	} else if(findMode(personalityCount) == 1) {
-		identity.innerHTML += "You most closely relate to Gregor";
-	} else if(findMode(personalityCount) == 2) {
-		identity.innerHTML += "You most closely relate to Meursault";
-	} else if(findMode(personalityCount) == 3) {
-		if(personalityCount.indexOf(0)==personalityCount.indexOf(1)&&personalityCount.indexOf(2)==-1)
-			identity.innerHTML += "<img src='Pictures/perfect existentialist.png' width='100%'><br>You most closely relate to the perfect existentialist";
-		else
-			identity.innerHTML += "You are almost a perfect existentialist";
+	if(perfect && personalityCount.length / answers.length > 0.6) {
+		identity.innerHTML += "<img src='Pictures/perfect existentialist.png' style='width:100%;'><br>You are the perfect existentialist!";
+	} else if(perfect || personalityCount.length / answers.length > 0.6) {
+		identity.innerHTML += "<img src='Pictures/almost perfect.png' style='width:279px;'><br>You are almost the perfect existentialist.";
+	} else {
+		identity.innerHTML += "<img src='Pictures/almost perfect.png' style='width:255px;'><br>You are not the perfect existentialist";
 	}
 	document.getElementById("story").innerHTML = finalStory;
 	for(ij = 0; ij < answers.length; ij++) {
 		showQuestion(answers[ij]);
 	}
 	console.log(user);
+	areFinished = true;
+	changeBackground(perfect);
 }
 
 function showQuestion(array) {
@@ -237,19 +267,19 @@ function nextQ(num) {
 		case 0:
 			if(num == 1) {
 				user.brickAction = "throw";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 1;
-				personalityCount.push(0);
 			} else if(num == 2) {
 				user.brickAction = "make art from";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 2;
-				personalityCount.push(1);
 			} else if(num == 3) {
 				user.brickAction = "do nothing with";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 3;
-				personalityCount.push(2);
 			} else {
 				user.brickAction = userInput.value.toLowerCase();
 				itemsToInsert = [userInput.value.toLowerCase()];
@@ -259,22 +289,22 @@ function nextQ(num) {
 		case 1:
 			if(num == 1) {
 				user.throwAt = "your teacher";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 5;
 				finalStory += "After given a brick by a random stranger, you decide to bring it to school to throw at your teacher. ";
-				personalityCount.push(0);
 			} else if(num == 2) {
 				user.throwAt = "your boss";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 6;
 				finalStory += "After given a brick by a random stranger, you decide to bring it to work to throw at your boss. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				user.throwAt = "the stranger";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 7;
 				finalStory += "After given a brick by a random stranger, you decide to throw it at a random person. ";
-				personalityCount.push(2);
 			} else {
 				user.throwAt = userInput.value;
 				itemsToInsert = [userInput.value];
@@ -285,22 +315,22 @@ function nextQ(num) {
 		case 2:
 			if(num == 1) {
 				user.kindArt = "poem";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 9;
 				finalStory += "After given a brick by a random stranger, you decide to inscribe a poem into it. ";
-				personalityCount.push(0);
 			} else if(num == 2) {
 				user.kindArt = "money-maker piece of art";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 10;
 				finalStory += "After given a brick by a random stranger, you decide to transform it into a piece of artwork that you can sell for money. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				user.kindArt = "any kind of art";
+				personalityCount.push(0);
 				itemsToInsert = [];
 				questionIndex = 11;
 				finalStory += "After given a brick by a random stranger, you decide to make a piece of art. But you can't decide on what type of art because you believe all art is the same. ";
-				personalityCount.push(2);
 			} else {
 				user.kindArt = userInput.value.toLowerCase();
 				itemsToInsert = [userInput.value.toLowerCase(), userInput.value.toLowerCase()];
@@ -312,20 +342,20 @@ function nextQ(num) {
 			if(num == 1) {
 				user.doNothingAnswer = "I have better things to do";
 				itemsToInsert = [user.doNothingAnswer];
-				questionIndex = 13;
 				personalityCount.push(0);
+				questionIndex = 13;
 				finalStory += "So, as the King of Utopolis, a peasant gave you a brick for saving the kingdom from an earthquake. Your response of \"I have better things to do\" insulted the peasant. ";
 			} else if(num == 2) {
 				user.doNothingAnswer = "I have work to do";
 				itemsToInsert = [user.doNothingAnswer];
+				personalityCount.push(0);
 				questionIndex = 13;
-				personalityCount.push(1);
 				finalStory += "So, as the King of Utopolis, a peasant gave you a brick for saving the kingdom from an earthquake. Your response of \"I have work to do\" insulted the peasant. ";
 			} else if(num == 3) {
 				user.doNothingAnswer = "Why bother?";
 				itemsToInsert = [user.doNothingAnswer];
+				personalityCount.push(0);
 				questionIndex = 13;
-				personalityCount.push(2);
 				finalStory += "So, as the King of Utopolis, a peasant gave you a brick for saving the kingdom from an earthquake. Your response of \"Why should I bother?\" insulted the peasant. ";
 			} else {
 				user.doNothingAnswer = userInput.value;
@@ -362,21 +392,19 @@ function nextQ(num) {
 			if(num == 1) {
 				itemsToInsert = ["Your teacher"];
 				user.throwAction = "admit";
+				personalityCount.push(0);
 				questionIndex = 15;
 				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to show off your audacity and admit to throwing the brick. ";
-				personalityCount.push(0);
 			} else if(num == 2) {
 				itemsToInsert = ["Your teacher"];
 				user.throwAction = "blame";
 				questionIndex = 16;
 				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = ["Your teacher"];
 				user.throwAction = "wait";
 				questionIndex = 17;
 				finalStory += "Upon getting hit, your teacher exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = ["Your teacher", userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
@@ -396,13 +424,11 @@ function nextQ(num) {
 				user.throwAction = "blame";
 				questionIndex = 16;
 				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = ["Your boss"];
 				user.throwAction = "wait"
 				questionIndex = 17;
 				finalStory += "Upon getting hit, your boss exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = ["Your boss", userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
@@ -422,13 +448,11 @@ function nextQ(num) {
 				user.throwAction = "blame";
 				questionIndex = 16;
 				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = ["The stranger"];
 				user.throwAction = "wait"
 				questionIndex = 17;
 				finalStory += "Upon getting hit, the stranger exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = ["The stranger", userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
@@ -448,13 +472,11 @@ function nextQ(num) {
 				user.throwAction = "blame";
 				questionIndex = 16;
 				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to conceal your guilt by blaming another person. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [user.throwAt];
 				user.throwAction = "wait"
 				questionIndex = 17;
 				finalStory += "Upon getting hit, " + user.throwAt + " exclaims, \"Who did this&#8253\" You decide to not bring attention to yourself and let someone else act first. ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = [user.throwAt, userInput.value.toLowerCase()];
 				user.throwAction = userInput.value.toLowerCase();
@@ -473,13 +495,12 @@ function nextQ(num) {
 				itemsToInsert = ["the American Dream does not exist"];
 				questionIndex = 19;
 				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by saying, \"The American Dream does not exist.\" ";
-				personalityCount.push(1);
+				personalityCount.push(0);
 				user.AmericanDream = "the American Dream does not exist";
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 20;
 				finalStory += "While inscribing, someone decides to look over you shoulder to read it. They complain, \"What does this have to do with the American Dream&#8253;\" You respond by retorting, \"Can't you see?\" ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 19;
@@ -493,20 +514,22 @@ function nextQ(num) {
 				questionIndex = 21;
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to punch them. ";
 				personalityCount.push(0);
+				user.notBuyResponse = "punched the buyer";
 			} else if(num == 2) {
 				itemsToInsert = ["ignore him"];
 				questionIndex = 22;
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You decide to ignore them and persevere unti someone does want to buy it. ";
-				personalityCount.push(1);
+				user.notBuyResponse = "ignore the buyer";
 			} else if(num == 3) {
-				itemsToInsert = [];
+				itemsToInsert = ["do nothing"];
 				questionIndex = 23;
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to do nothing, as his opinion doesn't matter. ";
-				personalityCount.push(2);
+				user.notBuyResponse = "not do anything";
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 22;
 				finalStory += "But when you're trying to sell your artwork, a potential buyer insults your work saying, \"No one will ever buy that!\" You then decide to " + userInput.value + ". ";
+				user.notBuyResponse = userInput.value;
 			}
 			break;
 		case 11:
@@ -519,12 +542,10 @@ function nextQ(num) {
 				itemsToInsert = [];
 				questionIndex = 26;
 				finalStory += "Some time later, you decide to watch a play. At the reception after the play, the lead actor overhears your stance that all art is the same, and heads in your direction. You decide suddenly leave because you \"remembered\" work you had to do. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 27;
 				finalStory += "Some time later, you decide to watch a play. At the reception after the play, the lead actor overhears your stance that all art is the same, and heads in your direction. You decide to stand still like nothing happened. ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 28;
@@ -541,12 +562,11 @@ function nextQ(num) {
 				itemsToInsert = [user.kindArt, "to settle a deal with another person"];
 				questionIndex = 29;
 				finalStory += "So, while you're making " + user.kindArt + ", Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making " + user.kindArt + "?\". You say that it will help you settle a deal with another person. ";
-				personalityCount.push(1);
+				personalityCount.push(0);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 30;
 				finalStory += "So, while you're making " + user.kindArt + ", Rosenstern watches from behind and asks, \"If you are going to die, what is the point of making " + user.kindArt + "?\". You say that you don't know. ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = [user.kindArt, userInput.value];
 				questionIndex = 29;
@@ -563,12 +583,11 @@ function nextQ(num) {
 				itemsToInsert = [user.kindArt];
 				questionIndex = 32;
 				finalStory += "You decide to explain to the peasant that his thoughts don't matter. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 33;
 				finalStory += "You decide to appologize for your rudeness in an effort to fix the situation. ";
-				personalityCount.push(2);
+				personalityCount.push(0);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 34;
@@ -578,26 +597,25 @@ function nextQ(num) {
 		case 14:
 			if(num == 1) {
 				itemsToInsert = [];
-				questionIndex = 31;
+				questionIndex = 35;
 				finalStory += "You run over to help the injured child, but find that he is bleeding at a dangerous rate. ";
 				personalityCount.push(0);
 			} else if(num == 2) {
 				itemsToInsert = [user.kindArt];
-				questionIndex = 32;
+				questionIndex = 36;
 				finalStory += "After several minutes searching for medical assistance, you cannot find any. ";
-				personalityCount.push(1);
+				personalityCount.push(0);
 			} else if(num == 3) {
 				itemsToInsert = [];
-				questionIndex = 33;
+				questionIndex = 37;
 				finalStory += "After several minutes, no one else is able to see the child. ";
-				personalityCount.push(2);
 			} else {
 				itemsToInsert = [userInput.value];
-				questionIndex = 34;
+				questionIndex = 38;
 				finalStory += "You decide to " + userInput.value + " in an effort to fix the situation. ";
 			}
 			break;
-		case 16:
+		case 15:
 			if(num == 1) {
 				itemsToInsert = [];
 				questionIndex = 39;
@@ -609,13 +627,37 @@ function nextQ(num) {
 				questionIndex = 40;
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run home. ";
 				user.location = "home";
-				personalityCount.push(1);
+				personalityCount.push(0);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 41;
 				user.location = "away";
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run away. ";
-				personalityCount.push(2);
+				personalityCount.push(0);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 42;
+				user.location = userInput.value
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run " + userInput.value + ". ";
+			}
+			break;
+		case 16:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 39;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run out of the city. ";
+				user.location = "out of the city";
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 40;
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run home. ";
+				user.location = "home";
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 41;
+				user.location = "away";
+				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run away. ";
+				personalityCount.push(0);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 42;
@@ -629,19 +671,17 @@ function nextQ(num) {
 				questionIndex = 39;
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run out of the city. ";
 				user.location = "out of the city";
-				personalityCount.push(0);
 			} else if(num == 2) {
 				itemsToInsert = [];
 				questionIndex = 40;
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run home. ";
 				user.location = "home";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 41;
 				user.location = "away";
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run away. ";
-				personalityCount.push(2);
+				personalityCount.push(0);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 42;
@@ -655,23 +695,21 @@ function nextQ(num) {
 				questionIndex = 39;
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run out of the city. ";
 				user.location = "out of the city";
-				personalityCount.push(0);
 			} else if(num == 2) {
 				itemsToInsert = [];
 				questionIndex = 40;
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run home. ";
 				user.location = "home";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 41;
 				user.location = "away";
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run away. ";
-				personalityCount.push(2);
+				personalityCount.push(0);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 42;
-				user.location = userInput.value
+				user.location = userInput.value;
 				finalStory += user.throwAt + " becomes annoyed and throws the brick back. Fearing a large fight, you decide to run " + userInput.value + ". ";
 			}
 			break;
@@ -691,16 +729,340 @@ function nextQ(num) {
 					questionIndex = 46;
 				}
 				finalStory += "The stranger responds, \"What do you mean, '" + user.AmericanDream + "'? All art obviously deals with the American Dream!\" You try to win the arguement. ";
-				personalityCount.push(1);
 			} else if(num == 3) {
 				itemsToInsert = [];
 				questionIndex = 47;
 				finalStory += "The stranger responds, \"What do you mean, '" + user.AmericanDream + "'? All art obviously deals with the American Dream!\" You move somewhere more peaceful to work. ";
-				personalityCount.push(2);
+				personalityCount.push(0);
 			} else {
 				itemsToInsert = [userInput.value];
 				questionIndex = 48;
 				finalStory += "The stranger responds, \"What do you mean, '" + user.AmericanDream + "'? All art obviously deals with the American Dream!\" You then " + userInput.value + ". ";
+			}
+			break;
+		case 20:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 50;
+				finalStory += "The stranger responds, \"How does <i>that</i> talk about the American Dream?\" You respond by saying, \"It symbolizes the metaphorical death of the American Dream.\" ";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 49;
+				finalStory += "The stranger responds, \"How does <i>that</i> talk about the American Dream?\" You respond by saying, \"It shows the opportunity omnipresent in society.\" ";
+				personalityCount.push(0);
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 50;
+				finalStory += "The stranger responds, \"How does <i>that</i> talk about the American Dream?\" You respond by saying, \"It demonstrates the meaninglessness of the American Dream.\" ";
+				personalityCount.push(0);
+			} else {
+				itemsToInsert = [userInput.value];
+				questionIndex = 49;
+				finalStory += "The stranger responds, \"How does <i>that</i> talk about the American Dream?\" You respond by saying, \"" + userInput.value + ".\" ";
+			}
+			break;
+		case 21:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 51;
+				finalStory += "Stunned, he hesitates a second only to punch you back after realizing what happened. Disregarding all caution, you continue to fight. ";
+				user.punchResponse = "continue to fight";
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 52;
+				finalStory += "Stunned, he hesitates a second only to punch you back after realizing what happened. In an effort to fix the situation which could go horribly wrong, you apologize. ";
+				personalityCount.push(0);
+				user.punchResponse = "apologize";
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 53;
+				finalStory += "Stunned, he hesitates a second only to punch you back after realizing what happened. To escape future trouble, you run away. ";
+				personalityCount.push(0);
+				user.punchResponse = "run away";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 54;
+				finalStory += "Stunned, he hesitates a second only to punch you back after realizing what happened. You then" + userInput.value + ". ";
+				user.punchResponse = userInput.value.toLowerCase();
+			}
+			break;
+		case 22:
+			if(num == 1) {
+				itemsToInsert = ["give up and move on"];
+				questionIndex = 55;
+				user.sellFail = "give up and move on";
+				finalStory += "Months go by, and the only customers you have said disparaging comments. With little chance of success, you decide to give up and move on. ";
+			} else if(num == 2) {
+				itemsToInsert = ["try creating something new with the brick"];
+				questionIndex = 55;
+				user.sellFail = "try creating something new with the brick";
+				finalStory += "Months go by, and the only customers you have said disparaging comments. With little chance of success, you decide try to create something new with the brick. ";
+			} else if(num == 3) {
+				itemsToInsert = ["try to restore world peace with the brick after all the negativity you've recieved"];
+				questionIndex = 55;
+				user.sellFail = "try to restore world peace with the brick after all the negativity you've recieved";
+				finalStory += "Months go by, and the only customers you have said disparaging comments. With little chance of success, you decide to restore world peace with the brick after all the negativity you've recieved. ";
+				personalityCount.push(0);
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 55;
+				user.sellFail = userInput.value.toLowerCase();
+				finalStory += "Months go by, and the only customers you have said disparaging comments. With little chance of success, you decide " + userInput.value.toLowerCase() + ". ";
+			}
+			break;
+		case 23:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 56;
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to \"teach him a lesson\" on what good art is. ";
+			} else if(num == 2) {
+				itemsToInsert = [];
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to create a new piece of art that he might like. In an effort to sell your artwork, you helped civilize the world by pleasing this angered man. You are the perfect existentialist.";
+				personalityCount.push(0);
+				perfect = true;
+				finished();
+				return null;
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 57;
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to let him leave. ";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 58;
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to " + userInput.value.toLowerCase() + ". ";
+			}
+			break;
+		case 24:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 56;
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to \"teach him a lesson\" on what good art is. ";
+			} else if(num == 2) {
+				itemsToInsert = [];
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to create a new piece of art that he might like. In an effort to sell your artwork, you helped civilize the world by pleasing this angered man. You are the perfect existentialist. ";
+				personalityCount.push(0);
+				perfect = true;
+				finished();
+				return null;
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 57;
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to let him leave. ";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 58;
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to " + userInput.value.toLowerCase() + ". ";
+			}
+			break;
+		case 25:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 59;
+				finalStory += "After arguing with the actor for a while, the actor finally challenges, \"How about this: if you create a piece of art out of this brick, I will conceed that all art is equal.\" You accept the challenge. ";
+				personalityCount.push(0);
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 60;
+				finalStory += "After arguing with the actor for a while, the actor finally challenges, \"How about this: if you create a piece of art out of this brick, I will conceed that all art is equal.\" You deny the challenge. ";
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 61;
+				finalStory += "After arguing with the actor for a while, the actor finally challenges, \"How about this: if you create a piece of art out of this brick, I will conceed that all art is equal.\" You then ponder the challenge. ";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 62;
+				finalStory += "While you do nothing, he persists on insulting you and claims he will spread the word of your inferior work. You then decide to " + userInput.value.toLowerCase() + ". ";
+			}
+			break;
+		case 26:
+			if(num == 1) {
+				itemsToInsert = [];
+				finalStory += "The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You admit it. ";
+				personalityCount.push(0);
+				finished();
+				return null;
+			} else if(num == 2) {
+				itemsToInsert = [];
+				finalStory += "The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You decided to dodge the bullet and explain that you need to leave. ";
+				finished();
+				return null;
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 25;
+				finalStory += "The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You decided to argue that he is wrong. ";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 28;
+				finalStory += "The actor catches you before you reach the door. Feeling that you have insulted his passion for drama, he wants you to admit that some art is better than others. You decided to " + userInput.value.toLowerCase() + ". ";
+			}
+			break;
+		case 27:
+			if(num == 1) {
+				itemsToInsert = [];
+				questionIndex = 63;
+				finalStory += "Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. You respond that you didn't mean to hurt their feelings, you were only expressing your opinion. ";
+				personalityCount.push(0);
+				finished();
+			} else if(num == 2) {
+				itemsToInsert = [];
+				questionIndex = 64;
+				finalStory += "Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. You respond, \"I <i>don't</i> care about you!.\" ";
+				finished();
+			} else if(num == 3) {
+				itemsToInsert = [];
+				questionIndex = 65;
+				finalStory += "Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. You respond, \"Sorry, I didn't mean what I said.\" ";
+				finished();
+				personalityCount.push(0);
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 66;
+				finalStory += "Because you act like nothing happened, he feels not only insulted but is angered by your apparent egocentrism and apathy. He feels like you do not care how your actions effect others. You respond, \"" + userInput.value.toLowerCase() + ".\" ";
+				finished();
+			}
+			break;
+		case 39:
+			if(num == 1) {
+				itemsToInsert = ["make a new life for yourself"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to make a new life for yourself. ";
+				personalityCount.push(0);
+				user.runAwayTask = "make a new life for yourself";
+			} else if(num == 2) {
+				itemsToInsert = ["go to sleep"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to go to sleep. ";
+				user.runAwayTask = "go to sleep";
+			} else if(num == 3) {
+				itemsToInsert = ["find some food"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to find some food. ";
+				personalityCount.push(0);
+				user.runAwayTask = "find some food";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to " + userInput.value.toLowerCase() + ". ";
+				user.runAwayTask = userInput.value.toLowerCase();
+			}
+			break;
+		case 40:
+			if(num == 1) {
+				itemsToInsert = ["make a new life for yourself"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to make a new life for yourself. ";
+				personalityCount.push(0);
+				user.runAwayTask = "make a new life for yourself";
+			} else if(num == 2) {
+				itemsToInsert = ["go to sleep"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to go to sleep. ";
+				user.runAwayTask = "go to sleep";
+			} else if(num == 3) {
+				itemsToInsert = ["find some food"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to find some food. ";
+				personalityCount.push(0);
+				user.runAwayTask = "find some food";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to " + userInput.value.toLowerCase() + ". ";
+				user.runAwayTask = userInput.value.toLowerCase();
+			}
+			break;
+		case 41:
+			if(num == 1) {
+				itemsToInsert = ["make a new life for yourself"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to make a new life for yourself. ";
+				personalityCount.push(0);
+				user.runAwayTask = "make a new life for yourself";
+			} else if(num == 2) {
+				itemsToInsert = ["go to sleep"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to go to sleep. ";
+				user.runAwayTask = "go to sleep";
+			} else if(num == 3) {
+				itemsToInsert = ["find some food"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to find some food. ";
+				personalityCount.push(0);
+				user.runAwayTask = "find some food";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to " + userInput.value.toLowerCase() + ". ";
+				user.runAwayTask = userInput.value.toLowerCase();
+			}
+			break;
+		case 42:
+			if(num == 1) {
+				itemsToInsert = ["make a new life for yourself"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to make a new life for yourself. ";
+				personalityCount.push(0);
+				user.runAwayTask = "make a new life for yourself";
+			} else if(num == 2) {
+				itemsToInsert = ["go to sleep"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to go to sleep. ";
+				user.runAwayTask = "go to sleep";
+			} else if(num == 3) {
+				itemsToInsert = ["find some food"];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to find some food. ";
+				personalityCount.push(0);
+				user.runAwayTask = "find some food";
+			} else {
+				itemsToInsert = [userInput.value.toLowerCase()];
+				questionIndex = 63;
+				finalStory += "Finally out of the city, you decide to " + userInput.value.toLowerCase() + ". ";
+				user.runAwayTask = userInput.value.toLowerCase();
+			}
+			break;
+		case 63:
+			if(num == 1) {
+				finalStory += "While you are about to " + user.runAwayTask + ", a police officer suddenly arrests you for throwing the brick. You find out that because you threw the brick, your punishment is for death. In a fury, you then kill the officer. ";
+				finished();
+				return null;
+			} else if(num == 2) {
+				finalStory += "While you are about to " + user.runAwayTask + ", a police officer suddenly arrests you for throwing the brick. You find out that because you threw the brick, your punishment is for death. You comply only because you feel that will net you the best outcome. ";
+				personalityCount.push(0);
+				finished();
+				return null;
+			} else if(num == 3) {
+				finalStory += "While you are about to " + user.runAwayTask + ", a police officer suddenly arrests you for throwing the brick. You find out that because you threw the brick, your punishment is for death. When it is your time to die, instead of cowarding away from death, you stand proudly before it to help show the rest of the world what not to be like. ";
+				personalityCount.push(0);
+				perfect = true;
+				finished();
+				return null;
+			} else {
+				finalStory += "While you are about to " + user.runAwayTask + ", a police officer suddenly arrests you for throwing the brick. You find out that because you threw the brick, your punishment is for death. You then" + userInput.value.toLowerCase() + ". ";
+				finished();
+				return null;
+			}
+			case 35:
+			if(num == 1) {
+				finalStory += "You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you cry as he dies. ";
+				finished();
+				return null;
+			} else if(num == 2) {
+				finalStory += "You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you console him as he dies. ";
+				personalityCount.push(0);
+				finished();
+				return null;
+			} else if(num == 3) {
+				finalStory += "You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you go to find help. You understand that you cannot help him because you lack medical knowledge, and therefore you understand your role. Following your role helped save this child's life. ";
+				personalityCount.push(0);
+				perfect = true;
+				finished();
+				return null;
+			} else {
+				finalStory += "You run over to help the injured child, but find that he is bleeding at a dangerous rate. You have no way of stopping the bleeding, so you " + userInput.value.toLowerCase() + ". ";
+				finished();
+				return null;
 			}
 			break;
 		default:
